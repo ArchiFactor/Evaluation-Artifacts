@@ -1,0 +1,279 @@
+===== Graph after static association =====
+Vertex NoteObjective is connected to:
+	(Objective, weight: 0.75, type: OWNERSHIP)
+	(Note, weight: 1.5, type: INHERITANCE)
+Vertex TaskBoard is connected to:
+	(OkrDepartment, weight: 0.75, type: OWNERSHIP)
+	(Task, weight: 0.75, type: OWNERSHIP)
+	(TaskState, weight: 0.75, type: OWNERSHIP)
+Vertex InitState is connected to:
+Vertex Configuration is connected to:
+Vertex User is connected to:
+Vertex KeyResultHistory is connected to:
+	(KeyResult, weight: 0.75, type: OWNERSHIP)
+Vertex RevisionInformation is connected to:
+Vertex Cycle is connected to:
+	(OkrCompany, weight: 0.75, type: OWNERSHIP)
+Vertex DefaultTaskBoardState is connected to:
+Vertex UserSettings is connected to:
+	(OkrCompany, weight: 0.75, type: OWNERSHIP)
+	(OkrDepartment, weight: 0.75, type: OWNERSHIP)
+Vertex OkrCompanyHistory is connected to:
+	(OkrCompany, weight: 0.75, type: OWNERSHIP)
+	(OkrUnitHistory, weight: 1.5, type: INHERITANCE)
+Vertex FrontendLog is connected to:
+Vertex Task is connected to:
+	(TaskBoard, weight: 0.75, type: OWNERSHIP)
+	(TaskState, weight: 0.1, type: REFERENCE)
+	(KeyResult, weight: 0.1, type: REFERENCE)
+Vertex OkrTopicDescription is connected to:
+	(OkrDepartment, weight: 0.75, type: OWNERSHIP)
+	(OkrTopicDraft, weight: 1.5, type: INHERITANCE)
+Vertex OkrUnit is connected to:
+	(Objective, weight: 0.75, type: OWNERSHIP)
+	(OkrChildUnit, weight: 1.5, type: INHERITANCE)
+	(OkrTopicDraft, weight: 0.1, type: REFERENCE)
+	(OkrDepartment, weight: 1.5, type: INHERITANCE)
+	(OkrCompany, weight: 1.5, type: INHERITANCE)
+	(OkrBranch, weight: 1.5, type: INHERITANCE)
+Vertex OkrDepartmentHistory is connected to:
+	(OkrDepartment, weight: 0.75, type: OWNERSHIP)
+	(OkrUnitHistory, weight: 1.5, type: INHERITANCE)
+Vertex NoteKeyResult is connected to:
+	(KeyResult, weight: 0.75, type: OWNERSHIP)
+	(Note, weight: 1.5, type: INHERITANCE)
+Vertex OkrDepartment is connected to:
+	(TaskBoard, weight: 0.75, type: OWNERSHIP)
+	(UserSettings, weight: 0.75, type: OWNERSHIP)
+	(OkrDepartmentHistory, weight: 0.75, type: OWNERSHIP)
+	(OkrTopicDescription, weight: 0.75, type: OWNERSHIP)
+	(OkrChildUnit, weight: 1.5, type: INHERITANCE)
+	(OkrUnit, weight: 1.5, type: INHERITANCE)
+Vertex OkrTopicDraftHistory is connected to:
+	(OkrTopicDraft, weight: 0.75, type: OWNERSHIP)
+Vertex DashboardCreation is connected to:
+	(ChartCreationOptions, weight: 0.75, type: OWNERSHIP)
+Vertex KeyResult is connected to:
+	(KeyResultHistory, weight: 0.75, type: OWNERSHIP)
+	(Task, weight: 0.1, type: REFERENCE)
+	(NoteKeyResult, weight: 0.75, type: OWNERSHIP)
+	(Objective, weight: 0.75, type: OWNERSHIP)
+	(KeyResultMilestone, weight: 0.75, type: OWNERSHIP)
+Vertex OkrChildUnit is connected to:
+	(OkrUnit, weight: 1.5, type: INHERITANCE)
+	(OkrCompany, weight: 0.75, type: OWNERSHIP)
+	(OkrBranch, weight: 1.5, type: INHERITANCE)
+	(OkrDepartment, weight: 1.5, type: INHERITANCE)
+Vertex KeyResultMilestone is connected to:
+	(KeyResult, weight: 0.75, type: OWNERSHIP)
+Vertex OkrBranchHistory is connected to:
+	(OkrBranch, weight: 0.75, type: OWNERSHIP)
+	(OkrUnitHistory, weight: 1.5, type: INHERITANCE)
+Vertex ChartCreationOptions is connected to:
+	(DashboardCreation, weight: 0.75, type: OWNERSHIP)
+Vertex TaskState is connected to:
+	(TaskBoard, weight: 0.75, type: OWNERSHIP)
+	(Task, weight: 0.1, type: REFERENCE)
+Vertex OkrTopicDraft is connected to:
+	(OkrTopicDraftHistory, weight: 0.75, type: OWNERSHIP)
+	(OkrUnit, weight: 0.1, type: REFERENCE)
+	(NoteTopicDraft, weight: 0.75, type: OWNERSHIP)
+	(OkrTopicDescription, weight: 1.5, type: INHERITANCE)
+Vertex Note is connected to:
+	(NoteObjective, weight: 1.5, type: INHERITANCE)
+	(NoteKeyResult, weight: 1.5, type: INHERITANCE)
+	(NoteTopicDraft, weight: 1.5, type: INHERITANCE)
+Vertex NoteTopicDraft is connected to:
+	(OkrTopicDraft, weight: 0.75, type: OWNERSHIP)
+	(Note, weight: 1.5, type: INHERITANCE)
+Vertex Objective is connected to:
+	(NoteObjective, weight: 0.75, type: OWNERSHIP)
+	(OkrUnit, weight: 0.75, type: OWNERSHIP)
+	(KeyResult, weight: 0.75, type: OWNERSHIP)
+Vertex OkrCompany is connected to:
+	(Cycle, weight: 0.75, type: OWNERSHIP)
+	(UserSettings, weight: 0.75, type: OWNERSHIP)
+	(OkrCompanyHistory, weight: 0.75, type: OWNERSHIP)
+	(OkrChildUnit, weight: 0.75, type: OWNERSHIP)
+	(OkrUnit, weight: 1.5, type: INHERITANCE)
+Vertex Activity is connected to:
+Vertex OkrBranch is connected to:
+	(OkrBranchHistory, weight: 0.75, type: OWNERSHIP)
+	(OkrChildUnit, weight: 1.5, type: INHERITANCE)
+	(OkrUnit, weight: 1.5, type: INHERITANCE)
+Vertex OkrUnitHistory is connected to:
+	(OkrCompanyHistory, weight: 1.5, type: INHERITANCE)
+	(OkrDepartmentHistory, weight: 1.5, type: INHERITANCE)
+	(OkrBranchHistory, weight: 1.5, type: INHERITANCE)
+
+
+===== Graph after enhancement =====
+Vertex NoteObjective is connected to:
+	(Objective, weight: 0.75, type: OWNERSHIP)
+	(Note, weight: 1.5, type: INHERITANCE)
+Vertex TaskBoard is connected to:
+	(OkrDepartment, weight: 0.75, type: OWNERSHIP)
+	(Task, weight: 0.75, type: OWNERSHIP)
+	(TaskState, weight: 0.75, type: OWNERSHIP)
+Vertex InitState is connected to:
+Vertex Configuration is connected to:
+Vertex User is connected to:
+Vertex KeyResultHistory is connected to:
+	(KeyResult, weight: 0.75, type: OWNERSHIP)
+Vertex RevisionInformation is connected to:
+Vertex Cycle is connected to:
+	(OkrCompany, weight: 0.75, type: OWNERSHIP)
+Vertex DefaultTaskBoardState is connected to:
+Vertex UserSettings is connected to:
+	(OkrCompany, weight: 0.75, type: OWNERSHIP)
+	(OkrDepartment, weight: 0.75, type: OWNERSHIP)
+Vertex OkrCompanyHistory is connected to:
+	(OkrCompany, weight: 0.75, type: OWNERSHIP)
+	(OkrUnitHistory, weight: 1.5, type: INHERITANCE)
+Vertex FrontendLog is connected to:
+Vertex Task is connected to:
+	(TaskBoard, weight: 0.75, type: OWNERSHIP)
+	(TaskState, weight: 0.1, type: REFERENCE)
+	(KeyResult, weight: 0.1, type: REFERENCE)
+Vertex OkrTopicDescription is connected to:
+	(OkrDepartment, weight: 0.75, type: OWNERSHIP)
+	(OkrTopicDraft, weight: 1.5, type: INHERITANCE)
+Vertex OkrUnit is connected to:
+	(Objective, weight: 0.75, type: OWNERSHIP)
+	(OkrChildUnit, weight: 1.5, type: INHERITANCE)
+	(OkrTopicDraft, weight: 0.1, type: REFERENCE)
+	(OkrDepartment, weight: 1.5, type: INHERITANCE)
+	(OkrCompany, weight: 1.5, type: INHERITANCE)
+	(OkrBranch, weight: 1.5, type: INHERITANCE)
+Vertex OkrDepartmentHistory is connected to:
+	(OkrDepartment, weight: 0.75, type: OWNERSHIP)
+	(OkrUnitHistory, weight: 1.5, type: INHERITANCE)
+Vertex NoteKeyResult is connected to:
+	(KeyResult, weight: 0.75, type: OWNERSHIP)
+	(Note, weight: 1.5, type: INHERITANCE)
+Vertex OkrDepartment is connected to:
+	(TaskBoard, weight: 0.75, type: OWNERSHIP)
+	(UserSettings, weight: 0.75, type: OWNERSHIP)
+	(OkrDepartmentHistory, weight: 0.75, type: OWNERSHIP)
+	(OkrTopicDescription, weight: 0.75, type: OWNERSHIP)
+	(OkrChildUnit, weight: 1.5, type: INHERITANCE)
+	(OkrUnit, weight: 1.5, type: INHERITANCE)
+Vertex OkrTopicDraftHistory is connected to:
+	(OkrTopicDraft, weight: 0.75, type: OWNERSHIP)
+Vertex DashboardCreation is connected to:
+	(ChartCreationOptions, weight: 0.75, type: OWNERSHIP)
+Vertex KeyResult is connected to:
+	(KeyResultHistory, weight: 0.75, type: OWNERSHIP)
+	(Task, weight: 0.1, type: REFERENCE)
+	(NoteKeyResult, weight: 0.75, type: OWNERSHIP)
+	(Objective, weight: 0.75, type: OWNERSHIP)
+	(KeyResultMilestone, weight: 0.75, type: OWNERSHIP)
+Vertex OkrChildUnit is connected to:
+	(OkrUnit, weight: 1.5, type: INHERITANCE)
+	(OkrCompany, weight: 0.75, type: OWNERSHIP)
+	(OkrBranch, weight: 1.5, type: INHERITANCE)
+	(OkrDepartment, weight: 1.5, type: INHERITANCE)
+Vertex KeyResultMilestone is connected to:
+	(KeyResult, weight: 0.75, type: OWNERSHIP)
+Vertex OkrBranchHistory is connected to:
+	(OkrBranch, weight: 0.75, type: OWNERSHIP)
+	(OkrUnitHistory, weight: 1.5, type: INHERITANCE)
+Vertex ChartCreationOptions is connected to:
+	(DashboardCreation, weight: 0.75, type: OWNERSHIP)
+Vertex TaskState is connected to:
+	(TaskBoard, weight: 0.75, type: OWNERSHIP)
+	(Task, weight: 0.1, type: REFERENCE)
+Vertex OkrTopicDraft is connected to:
+	(OkrTopicDraftHistory, weight: 0.75, type: OWNERSHIP)
+	(OkrUnit, weight: 0.1, type: REFERENCE)
+	(NoteTopicDraft, weight: 0.75, type: OWNERSHIP)
+	(OkrTopicDescription, weight: 1.5, type: INHERITANCE)
+Vertex Note is connected to:
+	(NoteObjective, weight: 1.5, type: INHERITANCE)
+	(NoteKeyResult, weight: 1.5, type: INHERITANCE)
+	(NoteTopicDraft, weight: 1.5, type: INHERITANCE)
+Vertex NoteTopicDraft is connected to:
+	(OkrTopicDraft, weight: 0.75, type: OWNERSHIP)
+	(Note, weight: 1.5, type: INHERITANCE)
+Vertex Objective is connected to:
+	(NoteObjective, weight: 0.75, type: OWNERSHIP)
+	(OkrUnit, weight: 0.75, type: OWNERSHIP)
+	(KeyResult, weight: 0.75, type: OWNERSHIP)
+Vertex OkrCompany is connected to:
+	(Cycle, weight: 0.75, type: OWNERSHIP)
+	(UserSettings, weight: 0.75, type: OWNERSHIP)
+	(OkrCompanyHistory, weight: 0.75, type: OWNERSHIP)
+	(OkrChildUnit, weight: 0.75, type: OWNERSHIP)
+	(OkrUnit, weight: 1.5, type: INHERITANCE)
+Vertex Activity is connected to:
+Vertex OkrBranch is connected to:
+	(OkrBranchHistory, weight: 0.75, type: OWNERSHIP)
+	(OkrChildUnit, weight: 1.5, type: INHERITANCE)
+	(OkrUnit, weight: 1.5, type: INHERITANCE)
+Vertex OkrUnitHistory is connected to:
+	(OkrCompanyHistory, weight: 1.5, type: INHERITANCE)
+	(OkrDepartmentHistory, weight: 1.5, type: INHERITANCE)
+	(OkrBranchHistory, weight: 1.5, type: INHERITANCE)
+
+
+ Callgraphs:
+
+Cluster:
+	OkrCompanyHistory
+	OkrDepartmentHistory
+	OkrBranchHistory
+	OkrUnitHistory
+
+Cluster:
+	NoteObjective
+	Note
+	NoteTopicDraft
+	Objective
+	KeyResultMilestone
+	NoteKeyResult
+	KeyResultHistory
+	KeyResult
+
+Cluster:
+	Cycle
+	UserSettings
+	OkrChildUnit
+	OkrUnit
+	OkrCompany
+	OkrBranch
+	OkrDepartment
+
+Cluster:
+	Task
+	TaskBoard
+	TaskState
+
+Cluster:
+	ChartCreationOptions
+	DashboardCreation
+
+Cluster:
+	OkrTopicDraft
+	OkrTopicDescription
+	OkrTopicDraftHistory
+
+Cluster:
+	Activity
+
+Cluster:
+	Configuration
+
+Cluster:
+	InitState
+
+Cluster:
+	FrontendLog
+
+Cluster:
+	DefaultTaskBoardState
+
+Cluster:
+	RevisionInformation
+
+Cluster:
+	User

@@ -1,0 +1,804 @@
+===== Graph after static association =====
+Vertex RecurringIncome is connected to:
+	(User, weight: 0.75, type: OWNERSHIP)
+	(Income, weight: 0.75, type: OWNERSHIP)
+Vertex Savings is connected to:
+	(User, weight: 0.75, type: OWNERSHIP)
+	(SavingsOperation, weight: 0.75, type: OWNERSHIP)
+Vertex Income is connected to:
+	(RecurringIncome, weight: 0.75, type: OWNERSHIP)
+	(User, weight: 0.75, type: OWNERSHIP)
+Vertex SavingsOperation is connected to:
+	(Savings, weight: 0.75, type: OWNERSHIP)
+	(User, weight: 0.1, type: REFERENCE)
+Vertex PiggyBankAllocation is connected to:
+	(PiggyBank, weight: 0.75, type: OWNERSHIP)
+	(User, weight: 0.1, type: REFERENCE)
+Vertex User is connected to:
+	(RecurringIncome, weight: 0.75, type: OWNERSHIP)
+	(Savings, weight: 0.75, type: OWNERSHIP)
+	(Income, weight: 0.75, type: OWNERSHIP)
+	(SavingsOperation, weight: 0.1, type: REFERENCE)
+	(PiggyBankAllocation, weight: 0.1, type: REFERENCE)
+	(Group, weight: 0.75, type: OWNERSHIP)
+	(Expense, weight: 0.75, type: OWNERSHIP)
+	(RecurringExpense, weight: 0.75, type: OWNERSHIP)
+	(PersonalPiggyBank, weight: 0.75, type: OWNERSHIP)
+	(Invitation, weight: 1.5, type: IDENTITY)
+Vertex PiggyBank is connected to:
+	(PiggyBankAllocation, weight: 0.75, type: OWNERSHIP)
+	(PersonalPiggyBank, weight: 1.5, type: INHERITANCE)
+	(GroupPiggyBank, weight: 1.5, type: INHERITANCE)
+Vertex PersonalPiggyBank is connected to:
+	(User, weight: 0.75, type: OWNERSHIP)
+	(PiggyBank, weight: 1.5, type: INHERITANCE)
+Vertex RecurringExpense is connected to:
+	(User, weight: 0.75, type: OWNERSHIP)
+	(Expense, weight: 0.75, type: OWNERSHIP)
+Vertex Group is connected to:
+	(User, weight: 0.75, type: OWNERSHIP)
+	(GroupPiggyBank, weight: 0.75, type: OWNERSHIP)
+	(Invitation, weight: 1.5, type: IDENTITY)
+Vertex GroupPiggyBank is connected to:
+	(Group, weight: 0.75, type: OWNERSHIP)
+	(PiggyBank, weight: 1.5, type: INHERITANCE)
+Vertex Expense is connected to:
+	(User, weight: 0.75, type: OWNERSHIP)
+	(RecurringExpense, weight: 0.75, type: OWNERSHIP)
+Vertex Invitation is connected to:
+	(User, weight: 1.5, type: IDENTITY)
+	(Group, weight: 1.5, type: IDENTITY)
+
+
+===== Graph after enhancement =====
+Vertex RecurringIncome is connected to:
+	(User, weight: 0.75, type: OWNERSHIP)
+	(Income, weight: 0.75, type: OWNERSHIP)
+Vertex Savings is connected to:
+	(User, weight: 1.0, type: OWNERSHIP)
+	(SavingsOperation, weight: 1.0, type: OWNERSHIP)
+Vertex Income is connected to:
+	(RecurringIncome, weight: 0.75, type: OWNERSHIP)
+	(User, weight: 0.75, type: OWNERSHIP)
+Vertex SavingsOperation is connected to:
+	(Savings, weight: 1.0, type: OWNERSHIP)
+	(User, weight: 1.0, type: REFERENCE)
+Vertex PiggyBankAllocation is connected to:
+	(PiggyBank, weight: 1.0, type: OWNERSHIP)
+	(User, weight: 0.1, type: REFERENCE)
+Vertex User is connected to:
+	(RecurringIncome, weight: 0.75, type: OWNERSHIP)
+	(Savings, weight: 1.0, type: OWNERSHIP)
+	(Income, weight: 0.75, type: OWNERSHIP)
+	(SavingsOperation, weight: 1.0, type: REFERENCE)
+	(PiggyBankAllocation, weight: 0.1, type: REFERENCE)
+	(Group, weight: 1.0, type: OWNERSHIP)
+	(Expense, weight: 0.75, type: OWNERSHIP)
+	(RecurringExpense, weight: 0.75, type: OWNERSHIP)
+	(PersonalPiggyBank, weight: 0.75, type: OWNERSHIP)
+	(Invitation, weight: 1.5, type: IDENTITY)
+Vertex PiggyBank is connected to:
+	(PiggyBankAllocation, weight: 1.0, type: OWNERSHIP)
+	(PersonalPiggyBank, weight: 1.5, type: INHERITANCE)
+	(GroupPiggyBank, weight: 1.5, type: INHERITANCE)
+Vertex PersonalPiggyBank is connected to:
+	(User, weight: 0.75, type: OWNERSHIP)
+	(PiggyBank, weight: 1.5, type: INHERITANCE)
+Vertex RecurringExpense is connected to:
+	(User, weight: 0.75, type: OWNERSHIP)
+	(Expense, weight: 0.75, type: OWNERSHIP)
+Vertex Group is connected to:
+	(User, weight: 1.0, type: OWNERSHIP)
+	(GroupPiggyBank, weight: 0.75, type: OWNERSHIP)
+	(Invitation, weight: 1.5, type: IDENTITY)
+Vertex GroupPiggyBank is connected to:
+	(Group, weight: 0.75, type: OWNERSHIP)
+	(PiggyBank, weight: 1.5, type: INHERITANCE)
+Vertex Expense is connected to:
+	(User, weight: 0.75, type: OWNERSHIP)
+	(RecurringExpense, weight: 0.75, type: OWNERSHIP)
+Vertex Invitation is connected to:
+	(User, weight: 1.5, type: IDENTITY)
+	(Group, weight: 1.5, type: IDENTITY)
+
+
+ Callgraphs:
+Endpoint: RecurringExpenseScheduler.executeRecurringExpenseJob
+Defined Entities: [gr.aueb.budgetmanagement.domain.entities.RecurringExpense, gr.aueb.budgetmanagement.domain.entities.Expense]
+Created Entities: [gr.aueb.budgetmanagement.domain.entities.RecurringExpense, gr.aueb.budgetmanagement.domain.entities.Expense]
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.application.services.RecurringExpenseService.applyRecurringExpenses
+    gr.aueb.budgetmanagement.application.repositories.RecurringExpenseRepository.findNonStoppedRecurringExpenses
+    gr.aueb.budgetmanagement.domain.entities.RecurringExpense.apply
+      gr.aueb.budgetmanagement.domain.entities.RecurringExpense.shouldApply
+      gr.aueb.budgetmanagement.domain.entities.Expense.create
+      gr.aueb.budgetmanagement.domain.entities.Expense.addRecurringExpense
+    gr.aueb.budgetmanagement.application.repositories.RecurringExpenseRepository.save
+      jakarta.persistence.EntityManager.persist
+
+Endpoint: RecurringIncomeScheduler.executeRecurringIncomeJob
+Defined Entities: [gr.aueb.budgetmanagement.domain.entities.Income, gr.aueb.budgetmanagement.domain.entities.RecurringIncome]
+Created Entities: [gr.aueb.budgetmanagement.domain.entities.Income, gr.aueb.budgetmanagement.domain.entities.RecurringIncome]
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.application.services.RecurringIncomeService.applyRecurringIncomes
+    gr.aueb.budgetmanagement.application.repositories.RecurringIncomeRepository.findNonStoppedRecurringIncomes
+    gr.aueb.budgetmanagement.domain.entities.RecurringIncome.apply
+      gr.aueb.budgetmanagement.domain.entities.RecurringIncome.shouldApply
+      gr.aueb.budgetmanagement.domain.entities.Income.create
+      gr.aueb.budgetmanagement.domain.entities.Income.addRecurringIncome
+    gr.aueb.budgetmanagement.application.repositories.RecurringIncomeRepository.save
+      jakarta.persistence.EntityManager.persist
+
+Endpoint: SavingsResource.getSavings [ReadOnly]
+Defined Entities: []
+Created Entities: []
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.application.services.SavingsService.getSavings
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findById
+    gr.aueb.budgetmanagement.domain.entities.User.getSavings
+    gr.aueb.budgetmanagement.domain.entities.Savings.getId
+    gr.aueb.budgetmanagement.domain.valueobjects.Money.getValue
+    gr.aueb.budgetmanagement.domain.entities.Savings.getCurrentAmount
+      gr.aueb.budgetmanagement.domain.entities.SavingsOperation.getOperation
+      gr.aueb.budgetmanagement.domain.entities.SavingsOperation.getAmount
+
+Endpoint: SavingsResource.allocateToSavings
+Defined Entities: [gr.aueb.budgetmanagement.domain.entities.SavingsOperation, gr.aueb.budgetmanagement.domain.entities.Savings]
+Created Entities: [gr.aueb.budgetmanagement.domain.entities.User, gr.aueb.budgetmanagement.domain.entities.SavingsOperation]
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.presentation.api.requests.SavingsOperationRequest.amount
+  gr.aueb.budgetmanagement.presentation.api.requests.SavingsOperationRequest.date
+  gr.aueb.budgetmanagement.application.services.SavingsOperationService.allocate
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findById
+    gr.aueb.budgetmanagement.application.commands.AllocateSavingsCommand.userId
+    gr.aueb.budgetmanagement.domain.entities.User.allocateSavings
+      gr.aueb.budgetmanagement.domain.entities.Savings.allocate
+        gr.aueb.budgetmanagement.domain.entities.SavingsOperation.create
+          gr.aueb.budgetmanagement.domain.entities.Savings.getUser
+    gr.aueb.budgetmanagement.application.commands.AllocateSavingsCommand.amount
+    gr.aueb.budgetmanagement.application.commands.AllocateSavingsCommand.date
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.save
+      jakarta.persistence.EntityManager.persist
+    gr.aueb.budgetmanagement.domain.entities.SavingsOperation.getId
+    gr.aueb.budgetmanagement.domain.entities.SavingsOperation.getDate
+    gr.aueb.budgetmanagement.domain.valueobjects.Money.getValue
+    gr.aueb.budgetmanagement.domain.entities.SavingsOperation.getAmount
+    gr.aueb.budgetmanagement.domain.entities.SavingsOperation.getOperation
+    gr.aueb.budgetmanagement.domain.entities.Savings.getId
+    gr.aueb.budgetmanagement.domain.entities.SavingsOperation.getSavings
+
+Endpoint: SavingsResource.deallocateFromSavings
+Defined Entities: [gr.aueb.budgetmanagement.domain.entities.SavingsOperation, gr.aueb.budgetmanagement.domain.entities.Savings]
+Created Entities: [gr.aueb.budgetmanagement.domain.entities.User, gr.aueb.budgetmanagement.domain.entities.SavingsOperation]
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.presentation.api.requests.SavingsOperationRequest.amount
+  gr.aueb.budgetmanagement.presentation.api.requests.SavingsOperationRequest.date
+  gr.aueb.budgetmanagement.application.services.SavingsOperationService.deallocate
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findById
+    gr.aueb.budgetmanagement.application.commands.DeallocateSavingsCommand.userId
+    gr.aueb.budgetmanagement.domain.entities.User.deallocateSavings
+      gr.aueb.budgetmanagement.domain.entities.Savings.deallocate
+        gr.aueb.budgetmanagement.domain.valueobjects.Money.getValue
+        gr.aueb.budgetmanagement.domain.entities.Savings.getCurrentAmount
+          gr.aueb.budgetmanagement.domain.entities.SavingsOperation.getOperation
+          gr.aueb.budgetmanagement.domain.entities.SavingsOperation.getAmount
+        gr.aueb.budgetmanagement.domain.entities.SavingsOperation.create
+          gr.aueb.budgetmanagement.domain.entities.Savings.getUser
+    gr.aueb.budgetmanagement.application.commands.DeallocateSavingsCommand.amount
+    gr.aueb.budgetmanagement.application.commands.DeallocateSavingsCommand.date
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.save
+      jakarta.persistence.EntityManager.persist
+    gr.aueb.budgetmanagement.domain.entities.SavingsOperation.getId
+    gr.aueb.budgetmanagement.domain.entities.SavingsOperation.getDate
+    gr.aueb.budgetmanagement.domain.entities.Savings.getId
+    gr.aueb.budgetmanagement.domain.entities.SavingsOperation.getSavings
+
+Endpoint: PiggyBankResource.createPersonalPiggyBank
+Defined Entities: []
+Created Entities: [gr.aueb.budgetmanagement.domain.entities.PiggyBank, gr.aueb.budgetmanagement.domain.entities.PersonalPiggyBank]
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.presentation.api.requests.CreatePersonalPiggyBankRequest.name
+  gr.aueb.budgetmanagement.presentation.api.requests.CreatePersonalPiggyBankRequest.targetAmount
+  gr.aueb.budgetmanagement.presentation.api.requests.CreatePersonalPiggyBankRequest.category
+  gr.aueb.budgetmanagement.application.services.PiggyBankService.createPersonalPiggyBank
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findById
+    gr.aueb.budgetmanagement.application.commands.CreatePersonalPiggyBankCommand.userId
+    gr.aueb.budgetmanagement.domain.entities.PersonalPiggyBank.create
+    gr.aueb.budgetmanagement.application.commands.CreatePersonalPiggyBankCommand.name
+    gr.aueb.budgetmanagement.application.commands.CreatePersonalPiggyBankCommand.targetAmount
+    gr.aueb.budgetmanagement.application.commands.CreatePersonalPiggyBankCommand.category
+    gr.aueb.budgetmanagement.application.repositories.PiggyBankRepository.save
+      jakarta.persistence.EntityManager.persist
+    gr.aueb.budgetmanagement.domain.entities.PiggyBank.getId
+    gr.aueb.budgetmanagement.domain.entities.PiggyBank.getName
+    gr.aueb.budgetmanagement.domain.valueobjects.Money.getValue
+    gr.aueb.budgetmanagement.domain.entities.PiggyBank.getTargetAmount
+    gr.aueb.budgetmanagement.domain.entities.PiggyBank.getCurrentAmount
+      gr.aueb.budgetmanagement.domain.entities.PiggyBankAllocation.getAmount
+    gr.aueb.budgetmanagement.domain.entities.PiggyBank.getCategory
+
+Endpoint: PiggyBankResource.deletePiggyBank
+Defined Entities: []
+Created Entities: []
+Deleted Entities: [gr.aueb.budgetmanagement.domain.entities.PiggyBank]
+Calls: 
+  gr.aueb.budgetmanagement.application.services.PiggyBankService.dissolvePiggyBank
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findById
+    gr.aueb.budgetmanagement.application.commands.DissolvePiggyBankCommand.userId
+    gr.aueb.budgetmanagement.application.repositories.PiggyBankRepository.findById
+    gr.aueb.budgetmanagement.application.commands.DissolvePiggyBankCommand.piggyBankId
+    gr.aueb.budgetmanagement.domain.entities.PiggyBank.canBeDissolvedBy
+    gr.aueb.budgetmanagement.application.repositories.PiggyBankRepository.delete
+      jakarta.persistence.EntityManager.remove
+
+Endpoint: PiggyBankResource.createGroupPiggyBank
+Defined Entities: []
+Created Entities: [gr.aueb.budgetmanagement.domain.entities.GroupPiggyBank, gr.aueb.budgetmanagement.domain.entities.PiggyBank]
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.presentation.api.requests.CreateGroupPiggyBankRequest.name
+  gr.aueb.budgetmanagement.presentation.api.requests.CreateGroupPiggyBankRequest.targetAmount
+  gr.aueb.budgetmanagement.presentation.api.requests.CreateGroupPiggyBankRequest.category
+  gr.aueb.budgetmanagement.application.services.PiggyBankService.createGroupPiggyBank
+    gr.aueb.budgetmanagement.application.repositories.GroupRepository.findById
+    gr.aueb.budgetmanagement.application.commands.CreateGroupPiggyBankCommand.groupId
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findById
+    gr.aueb.budgetmanagement.application.commands.CreateGroupPiggyBankCommand.userId
+    gr.aueb.budgetmanagement.domain.entities.GroupPiggyBank.create
+      gr.aueb.budgetmanagement.domain.entities.Group.isAdmin
+        gr.aueb.budgetmanagement.domain.entities.User.equals
+    gr.aueb.budgetmanagement.application.commands.CreateGroupPiggyBankCommand.name
+    gr.aueb.budgetmanagement.application.commands.CreateGroupPiggyBankCommand.targetAmount
+    gr.aueb.budgetmanagement.application.commands.CreateGroupPiggyBankCommand.category
+    gr.aueb.budgetmanagement.application.repositories.PiggyBankRepository.save
+      jakarta.persistence.EntityManager.persist
+    gr.aueb.budgetmanagement.domain.entities.PiggyBank.getId
+    gr.aueb.budgetmanagement.domain.entities.PiggyBank.getName
+    gr.aueb.budgetmanagement.domain.valueobjects.Money.getValue
+    gr.aueb.budgetmanagement.domain.entities.PiggyBank.getTargetAmount
+    gr.aueb.budgetmanagement.domain.entities.PiggyBank.getCurrentAmount
+      gr.aueb.budgetmanagement.domain.entities.PiggyBankAllocation.getAmount
+    gr.aueb.budgetmanagement.domain.entities.PiggyBank.getCategory
+    gr.aueb.budgetmanagement.domain.entities.Group.getId
+
+Endpoint: PiggyBankResource.allocateToPiggyBank
+Defined Entities: [gr.aueb.budgetmanagement.domain.entities.PiggyBankAllocation, gr.aueb.budgetmanagement.domain.entities.PiggyBank]
+Created Entities: [gr.aueb.budgetmanagement.domain.entities.PiggyBankAllocation, gr.aueb.budgetmanagement.domain.entities.PiggyBank]
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.presentation.api.requests.AllocateToPiggyBankRequest.date
+  gr.aueb.budgetmanagement.presentation.api.requests.AllocateToPiggyBankRequest.amount
+  gr.aueb.budgetmanagement.application.services.PiggyBankAllocationService.allocateToPiggyBank
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findById
+    gr.aueb.budgetmanagement.application.commands.AllocateToPiggyBankCommand.userId
+    gr.aueb.budgetmanagement.application.repositories.PiggyBankRepository.findById
+    gr.aueb.budgetmanagement.application.commands.AllocateToPiggyBankCommand.piggyBankId
+    gr.aueb.budgetmanagement.domain.entities.PiggyBank.allocate
+      gr.aueb.budgetmanagement.domain.entities.PiggyBank.isAuthorizedUser
+      gr.aueb.budgetmanagement.domain.entities.PiggyBankAllocation.create
+    gr.aueb.budgetmanagement.application.commands.AllocateToPiggyBankCommand.amount
+    gr.aueb.budgetmanagement.application.commands.AllocateToPiggyBankCommand.date
+    gr.aueb.budgetmanagement.application.repositories.PiggyBankRepository.save
+      jakarta.persistence.EntityManager.persist
+    gr.aueb.budgetmanagement.domain.entities.PiggyBankAllocation.getId
+    gr.aueb.budgetmanagement.domain.entities.PiggyBankAllocation.getDate
+    gr.aueb.budgetmanagement.domain.valueobjects.Money.getValue
+    gr.aueb.budgetmanagement.domain.entities.PiggyBankAllocation.getAmount
+    gr.aueb.budgetmanagement.domain.entities.PiggyBank.getId
+    gr.aueb.budgetmanagement.domain.entities.PiggyBankAllocation.getPiggyBank
+
+Endpoint: PiggyBankResource.getPiggyBanks [ReadOnly]
+Defined Entities: []
+Created Entities: []
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.application.services.PiggyBankService.getPiggyBanks
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findById
+    gr.aueb.budgetmanagement.domain.entities.User.getPiggyBanks
+    gr.aueb.budgetmanagement.domain.entities.PiggyBank.getId
+    gr.aueb.budgetmanagement.domain.entities.PiggyBank.getName
+    gr.aueb.budgetmanagement.domain.valueobjects.Money.getValue
+    gr.aueb.budgetmanagement.domain.entities.PiggyBank.getTargetAmount
+    gr.aueb.budgetmanagement.domain.entities.PiggyBank.getCurrentAmount
+      gr.aueb.budgetmanagement.domain.entities.PiggyBankAllocation.getAmount
+    gr.aueb.budgetmanagement.domain.entities.PiggyBank.getCategory
+    gr.aueb.budgetmanagement.domain.entities.User.getGroups
+    gr.aueb.budgetmanagement.domain.entities.Group.getName
+    gr.aueb.budgetmanagement.domain.entities.Group.getId
+    gr.aueb.budgetmanagement.domain.entities.Group.getPiggyBanks
+
+Endpoint: UserResource.registerUser
+Defined Entities: [gr.aueb.budgetmanagement.domain.entities.User, gr.aueb.budgetmanagement.domain.entities.Savings]
+Created Entities: [gr.aueb.budgetmanagement.domain.entities.User, gr.aueb.budgetmanagement.domain.entities.Savings]
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.presentation.api.requests.RegisterUserRequest.username
+  gr.aueb.budgetmanagement.presentation.api.requests.RegisterUserRequest.email
+  gr.aueb.budgetmanagement.presentation.api.requests.RegisterUserRequest.password
+  gr.aueb.budgetmanagement.application.services.UserService.registerUser
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.existsByUsername
+    gr.aueb.budgetmanagement.application.commands.RegisterUserCommand.username
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.existsByEmail
+    gr.aueb.budgetmanagement.application.commands.RegisterUserCommand.email
+    gr.aueb.budgetmanagement.domain.entities.User.create
+      gr.aueb.budgetmanagement.domain.ports.PasswordHasher.hashPassword
+      gr.aueb.budgetmanagement.domain.valueobjects.Password.getValue
+      gr.aueb.budgetmanagement.domain.entities.User.setSavings
+      gr.aueb.budgetmanagement.domain.entities.Savings.create
+    gr.aueb.budgetmanagement.application.commands.RegisterUserCommand.password
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.save
+      jakarta.persistence.EntityManager.persist
+    gr.aueb.budgetmanagement.infrastructure.security.JwtTokenService.generateToken
+      gr.aueb.budgetmanagement.domain.valueobjects.EmailAddress.getValue
+      gr.aueb.budgetmanagement.domain.entities.User.getEmail
+      gr.aueb.budgetmanagement.domain.entities.User.getId
+
+Endpoint: UserResource.authenticateUser [ReadOnly]
+Defined Entities: []
+Created Entities: []
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.presentation.api.requests.AuthenticateUserRequest.email
+  gr.aueb.budgetmanagement.presentation.api.requests.AuthenticateUserRequest.password
+  gr.aueb.budgetmanagement.application.services.UserService.authenticateUser
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findByEmail
+    gr.aueb.budgetmanagement.application.commands.AuthenticateUserCommand.email
+    gr.aueb.budgetmanagement.domain.entities.User.verifyPassword
+      gr.aueb.budgetmanagement.domain.ports.PasswordHasher.verifyPassword
+    gr.aueb.budgetmanagement.application.commands.AuthenticateUserCommand.password
+    gr.aueb.budgetmanagement.infrastructure.security.JwtTokenService.generateToken
+      gr.aueb.budgetmanagement.domain.valueobjects.EmailAddress.getValue
+      gr.aueb.budgetmanagement.domain.entities.User.getEmail
+      gr.aueb.budgetmanagement.domain.entities.User.getId
+
+Endpoint: UserResource.getBalance [ReadOnly]
+Defined Entities: []
+Created Entities: []
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.application.services.UserService.getBalance
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findById
+    gr.aueb.budgetmanagement.domain.entities.User.getCurrentBalance
+
+Endpoint: ExpenseResource.getExpenseCategories [ReadOnly]
+Defined Entities: []
+Created Entities: []
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.domain.enums.ExpenseCategory.values
+
+Endpoint: ExpenseResource.getExpenses [ReadOnly]
+Defined Entities: []
+Created Entities: []
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.application.services.ExpenseService.getExpenses
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findById
+    gr.aueb.budgetmanagement.domain.entities.User.getExpenses
+    gr.aueb.budgetmanagement.domain.entities.Expense.getDate
+    gr.aueb.budgetmanagement.domain.entities.Expense.getCategory
+    gr.aueb.budgetmanagement.application.services.ExpenseService.toAddedExpenseRepresentationList
+
+Endpoint: ExpenseResource.createExpense
+Defined Entities: [gr.aueb.budgetmanagement.domain.entities.User, gr.aueb.budgetmanagement.domain.entities.Expense]
+Created Entities: [gr.aueb.budgetmanagement.domain.entities.User, gr.aueb.budgetmanagement.domain.entities.Expense]
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.presentation.api.requests.AddExpenseRequest.amount
+  gr.aueb.budgetmanagement.presentation.api.requests.AddExpenseRequest.category
+  gr.aueb.budgetmanagement.presentation.api.requests.AddExpenseRequest.date
+  gr.aueb.budgetmanagement.application.services.ExpenseService.createExpense
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findById
+    gr.aueb.budgetmanagement.application.commands.AddExpenseCommand.userId
+    gr.aueb.budgetmanagement.domain.entities.User.addExpense
+      gr.aueb.budgetmanagement.domain.entities.Expense.create
+    gr.aueb.budgetmanagement.application.commands.AddExpenseCommand.amount
+    gr.aueb.budgetmanagement.application.commands.AddExpenseCommand.date
+    gr.aueb.budgetmanagement.application.commands.AddExpenseCommand.category
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.save
+      jakarta.persistence.EntityManager.persist
+    gr.aueb.budgetmanagement.domain.entities.Expense.getId
+    gr.aueb.budgetmanagement.domain.valueobjects.Money.getValue
+    gr.aueb.budgetmanagement.domain.entities.Expense.getAmount
+    gr.aueb.budgetmanagement.domain.entities.Expense.getDate
+    gr.aueb.budgetmanagement.domain.entities.Expense.getCategory
+
+Endpoint: ExpenseResource.updateExpense
+Defined Entities: [gr.aueb.budgetmanagement.domain.entities.Expense]
+Created Entities: [gr.aueb.budgetmanagement.domain.entities.User]
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.presentation.api.requests.UpdateExpenseRequest.amount
+  gr.aueb.budgetmanagement.presentation.api.requests.UpdateExpenseRequest.date
+  gr.aueb.budgetmanagement.presentation.api.requests.UpdateExpenseRequest.category
+  gr.aueb.budgetmanagement.application.services.ExpenseService.updateExpense
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findById
+    gr.aueb.budgetmanagement.application.commands.UpdateExpenseCommand.userId
+    gr.aueb.budgetmanagement.domain.entities.User.getExpenses
+    gr.aueb.budgetmanagement.domain.entities.Expense.getId
+    gr.aueb.budgetmanagement.application.commands.UpdateExpenseCommand.expenseId
+    gr.aueb.budgetmanagement.domain.entities.Expense.update
+    gr.aueb.budgetmanagement.application.commands.UpdateExpenseCommand.amount
+    gr.aueb.budgetmanagement.application.commands.UpdateExpenseCommand.date
+    gr.aueb.budgetmanagement.application.commands.UpdateExpenseCommand.category
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.save
+      jakarta.persistence.EntityManager.persist
+    gr.aueb.budgetmanagement.domain.valueobjects.Money.getValue
+    gr.aueb.budgetmanagement.domain.entities.Expense.getAmount
+    gr.aueb.budgetmanagement.domain.entities.Expense.getDate
+    gr.aueb.budgetmanagement.domain.entities.Expense.getCategory
+
+Endpoint: ExpenseResource.deleteExpense
+Defined Entities: []
+Created Entities: [gr.aueb.budgetmanagement.domain.entities.User]
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.application.services.ExpenseService.deleteExpense
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findById
+    gr.aueb.budgetmanagement.domain.entities.User.removeExpense
+      gr.aueb.budgetmanagement.domain.entities.User.getExpenses
+      gr.aueb.budgetmanagement.domain.entities.Expense.getId
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.save
+      jakarta.persistence.EntityManager.persist
+
+Endpoint: RootResource.redirectToSwagger [ReadOnly]
+Defined Entities: []
+Created Entities: []
+Deleted Entities: []
+Calls: 
+
+Endpoint: RecurringExpenseResource.getRecurringExpenses [ReadOnly]
+Defined Entities: []
+Created Entities: []
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.application.services.RecurringExpenseService.getRecurringExpenses
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findById
+    gr.aueb.budgetmanagement.domain.entities.User.getRecurringExpenses
+    gr.aueb.budgetmanagement.application.services.RecurringExpenseService.toAddedRecurringExpenseRepresentationList
+
+Endpoint: RecurringExpenseResource.createRecurringExpense
+Defined Entities: [gr.aueb.budgetmanagement.domain.entities.User, gr.aueb.budgetmanagement.domain.entities.RecurringExpense]
+Created Entities: [gr.aueb.budgetmanagement.domain.entities.User, gr.aueb.budgetmanagement.domain.entities.RecurringExpense]
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.presentation.api.requests.AddRecurringExpenseRequest.name
+  gr.aueb.budgetmanagement.presentation.api.requests.AddRecurringExpenseRequest.amount
+  gr.aueb.budgetmanagement.presentation.api.requests.AddRecurringExpenseRequest.category
+  gr.aueb.budgetmanagement.presentation.api.requests.AddRecurringExpenseRequest.start_date
+  gr.aueb.budgetmanagement.presentation.api.requests.AddRecurringExpenseRequest.end_date
+  gr.aueb.budgetmanagement.application.services.RecurringExpenseService.createRecurringExpense
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findById
+    gr.aueb.budgetmanagement.application.commands.AddRecurringExpenseCommand.userId
+    gr.aueb.budgetmanagement.domain.entities.User.addRecurringExpense
+      gr.aueb.budgetmanagement.domain.entities.RecurringExpense.create
+    gr.aueb.budgetmanagement.application.commands.AddRecurringExpenseCommand.name
+    gr.aueb.budgetmanagement.application.commands.AddRecurringExpenseCommand.amount
+    gr.aueb.budgetmanagement.application.commands.AddRecurringExpenseCommand.category
+    gr.aueb.budgetmanagement.application.commands.AddRecurringExpenseCommand.startDate
+    gr.aueb.budgetmanagement.application.commands.AddRecurringExpenseCommand.endDate
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.save
+      jakarta.persistence.EntityManager.persist
+    gr.aueb.budgetmanagement.application.services.RecurringExpenseService.toAddedRecurringExpenseRepresentation
+      gr.aueb.budgetmanagement.domain.entities.RecurringExpense.getId
+      gr.aueb.budgetmanagement.domain.entities.RecurringExpense.getName
+      gr.aueb.budgetmanagement.domain.valueobjects.Money.getValue
+      gr.aueb.budgetmanagement.domain.entities.RecurringExpense.getAmount
+      gr.aueb.budgetmanagement.domain.entities.RecurringExpense.getCategory
+      gr.aueb.budgetmanagement.domain.entities.RecurringExpense.getStartDate
+      gr.aueb.budgetmanagement.domain.entities.RecurringExpense.getEndDate
+      gr.aueb.budgetmanagement.domain.entities.RecurringExpense.getLastAppliedDate
+      gr.aueb.budgetmanagement.domain.entities.RecurringExpense.isStopped
+
+Endpoint: RecurringExpenseResource.updateRecurringExpense
+Defined Entities: [gr.aueb.budgetmanagement.domain.entities.RecurringExpense]
+Created Entities: [gr.aueb.budgetmanagement.domain.entities.User]
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.presentation.api.requests.StopRecurringExpenseRequest.is_stopped
+  gr.aueb.budgetmanagement.application.services.RecurringExpenseService.updateRecurringExpense
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findById
+    gr.aueb.budgetmanagement.application.commands.UpdateRecurringExpenseCommand.userId
+    gr.aueb.budgetmanagement.domain.entities.User.getRecurringExpenses
+    gr.aueb.budgetmanagement.domain.entities.RecurringExpense.getId
+    gr.aueb.budgetmanagement.application.commands.UpdateRecurringExpenseCommand.recurringExpenseId
+    gr.aueb.budgetmanagement.domain.entities.RecurringExpense.stop
+    gr.aueb.budgetmanagement.application.commands.UpdateRecurringExpenseCommand.isStopped
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.save
+      jakarta.persistence.EntityManager.persist
+
+Endpoint: RecurringExpenseResource.deleteRecurringExpense
+Defined Entities: []
+Created Entities: [gr.aueb.budgetmanagement.domain.entities.User]
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.application.services.RecurringExpenseService.deleteRecurringExpense
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findById
+    gr.aueb.budgetmanagement.domain.entities.User.getRecurringExpenses
+    gr.aueb.budgetmanagement.domain.entities.RecurringExpense.getId
+    gr.aueb.budgetmanagement.domain.entities.User.removeRecurringExpense
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.save
+      jakarta.persistence.EntityManager.persist
+
+Endpoint: InvitationResource.createInvitation
+Defined Entities: [gr.aueb.budgetmanagement.domain.entities.Invitation, gr.aueb.budgetmanagement.domain.entities.User]
+Created Entities: [gr.aueb.budgetmanagement.domain.entities.Invitation]
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.presentation.api.requests.SendInvitationRequest.groupId
+  gr.aueb.budgetmanagement.presentation.api.requests.SendInvitationRequest.email
+  gr.aueb.budgetmanagement.application.services.InvitationService.sendInvitation
+    gr.aueb.budgetmanagement.application.repositories.GroupRepository.findById
+    gr.aueb.budgetmanagement.application.commands.SendInvitationCommand.groupId
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findByEmail
+    gr.aueb.budgetmanagement.application.commands.SendInvitationCommand.email
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findById
+    gr.aueb.budgetmanagement.application.commands.SendInvitationCommand.userId
+    gr.aueb.budgetmanagement.domain.entities.Invitation.create
+      gr.aueb.budgetmanagement.domain.entities.Group.getAdmin
+      gr.aueb.budgetmanagement.domain.entities.User.equals
+      gr.aueb.budgetmanagement.domain.entities.Group.getMembers
+      gr.aueb.budgetmanagement.domain.entities.User.hasAlreadyBeenInvitedTo
+        gr.aueb.budgetmanagement.domain.entities.Invitation.getGroup
+      gr.aueb.budgetmanagement.domain.entities.Group.getId
+      gr.aueb.budgetmanagement.domain.entities.User.getId
+      gr.aueb.budgetmanagement.domain.entities.User.addInvitation
+    gr.aueb.budgetmanagement.application.repositories.InvitationRepository.save
+      jakarta.persistence.EntityManager.persist
+    gr.aueb.budgetmanagement.domain.entities.Invitation.getStatus
+    gr.aueb.budgetmanagement.domain.entities.Invitation.getCreatedAt
+
+Endpoint: InvitationResource.getInvitations [ReadOnly]
+Defined Entities: []
+Created Entities: []
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.application.services.InvitationService.getInvitations
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findById
+    gr.aueb.budgetmanagement.application.repositories.InvitationRepository.findByInviteeAndStatus
+    gr.aueb.budgetmanagement.application.repositories.InvitationRepository.findByInvitee
+    gr.aueb.budgetmanagement.domain.entities.Group.getId
+    gr.aueb.budgetmanagement.domain.entities.Invitation.getGroup
+    gr.aueb.budgetmanagement.domain.entities.User.getId
+    gr.aueb.budgetmanagement.domain.entities.Invitation.getInvitee
+    gr.aueb.budgetmanagement.domain.entities.Invitation.getStatus
+    gr.aueb.budgetmanagement.domain.entities.Invitation.getCreatedAt
+
+Endpoint: InvitationResource.updateInvitationStatus
+Defined Entities: [gr.aueb.budgetmanagement.domain.entities.Invitation, gr.aueb.budgetmanagement.domain.entities.Group, gr.aueb.budgetmanagement.domain.entities.User]
+Created Entities: [gr.aueb.budgetmanagement.domain.entities.Invitation]
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.presentation.api.requests.UpdateInvitationStatusRequest.status
+  gr.aueb.budgetmanagement.application.services.InvitationService.respondToInvitation
+    gr.aueb.budgetmanagement.application.repositories.GroupRepository.findById
+    gr.aueb.budgetmanagement.application.commands.RespondToInvitationCommand.groupId
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findById
+    gr.aueb.budgetmanagement.application.commands.RespondToInvitationCommand.userId
+    gr.aueb.budgetmanagement.domain.entities.Group.getId
+    gr.aueb.budgetmanagement.domain.entities.User.getId
+    gr.aueb.budgetmanagement.application.repositories.InvitationRepository.findById
+    gr.aueb.budgetmanagement.domain.entities.Invitation.respond
+      gr.aueb.budgetmanagement.domain.entities.User.containsInvitation
+      gr.aueb.budgetmanagement.domain.entities.Invitation.accept
+        gr.aueb.budgetmanagement.domain.entities.Group.addMember
+      gr.aueb.budgetmanagement.domain.entities.Invitation.reject
+    gr.aueb.budgetmanagement.application.commands.RespondToInvitationCommand.response
+    gr.aueb.budgetmanagement.application.repositories.InvitationRepository.save
+      jakarta.persistence.EntityManager.persist
+    gr.aueb.budgetmanagement.domain.entities.Invitation.getGroup
+    gr.aueb.budgetmanagement.domain.entities.Invitation.getInvitee
+    gr.aueb.budgetmanagement.domain.entities.Invitation.getStatus
+    gr.aueb.budgetmanagement.domain.entities.Invitation.getCreatedAt
+
+Endpoint: GroupResource.createGroup
+Defined Entities: [gr.aueb.budgetmanagement.domain.entities.Group, gr.aueb.budgetmanagement.domain.entities.User]
+Created Entities: [gr.aueb.budgetmanagement.domain.entities.Group]
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.presentation.api.requests.CreateGroupRequest.name
+  gr.aueb.budgetmanagement.application.services.GroupService.createGroup
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findById
+    gr.aueb.budgetmanagement.application.commands.CreateGroupCommand.userId
+    gr.aueb.budgetmanagement.application.repositories.GroupRepository.existsByNameAndMemberId
+    gr.aueb.budgetmanagement.application.commands.CreateGroupCommand.name
+    gr.aueb.budgetmanagement.domain.entities.User.getId
+    gr.aueb.budgetmanagement.domain.entities.Group.create
+      gr.aueb.budgetmanagement.domain.entities.Group.addMember
+    gr.aueb.budgetmanagement.application.repositories.GroupRepository.save
+      jakarta.persistence.EntityManager.persist
+    gr.aueb.budgetmanagement.domain.entities.Group.getId
+    gr.aueb.budgetmanagement.domain.entities.Group.getName
+  gr.aueb.budgetmanagement.application.representations.GroupRepresentation.id
+
+Endpoint: GroupResource.getGroups [ReadOnly]
+Defined Entities: []
+Created Entities: []
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.application.services.GroupService.getGroups
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findById
+    gr.aueb.budgetmanagement.application.services.GroupService.toCreatedGroupRepresentationList
+      gr.aueb.budgetmanagement.domain.entities.Group.getId
+      gr.aueb.budgetmanagement.domain.entities.Group.getName
+      gr.aueb.budgetmanagement.domain.entities.Group.isAdmin
+        gr.aueb.budgetmanagement.domain.entities.User.equals
+    gr.aueb.budgetmanagement.domain.entities.User.getGroups
+
+Endpoint: RecurringIncomeResource.getRecurringIncomes [ReadOnly]
+Defined Entities: []
+Created Entities: []
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.application.services.RecurringIncomeService.getRecurringIncomes
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findById
+    gr.aueb.budgetmanagement.domain.entities.User.getRecurringIncomes
+    gr.aueb.budgetmanagement.application.services.RecurringIncomeService.toAddedRecurringIncomeRepresentationList
+
+Endpoint: RecurringIncomeResource.createRecurringIncome
+Defined Entities: [gr.aueb.budgetmanagement.domain.entities.RecurringIncome, gr.aueb.budgetmanagement.domain.entities.User]
+Created Entities: [gr.aueb.budgetmanagement.domain.entities.RecurringIncome, gr.aueb.budgetmanagement.domain.entities.User]
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.presentation.api.requests.AddRecurringIncomeRequest.name
+  gr.aueb.budgetmanagement.presentation.api.requests.AddRecurringIncomeRequest.amount
+  gr.aueb.budgetmanagement.presentation.api.requests.AddRecurringIncomeRequest.category
+  gr.aueb.budgetmanagement.presentation.api.requests.AddRecurringIncomeRequest.start_date
+  gr.aueb.budgetmanagement.presentation.api.requests.AddRecurringIncomeRequest.end_date
+  gr.aueb.budgetmanagement.application.services.RecurringIncomeService.createRecurringIncome
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findById
+    gr.aueb.budgetmanagement.application.commands.AddRecurringIncomeCommand.userId
+    gr.aueb.budgetmanagement.domain.entities.User.addRecurringIncome
+      gr.aueb.budgetmanagement.domain.entities.RecurringIncome.create
+    gr.aueb.budgetmanagement.application.commands.AddRecurringIncomeCommand.name
+    gr.aueb.budgetmanagement.application.commands.AddRecurringIncomeCommand.amount
+    gr.aueb.budgetmanagement.application.commands.AddRecurringIncomeCommand.category
+    gr.aueb.budgetmanagement.application.commands.AddRecurringIncomeCommand.startDate
+    gr.aueb.budgetmanagement.application.commands.AddRecurringIncomeCommand.endDate
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.save
+      jakarta.persistence.EntityManager.persist
+    gr.aueb.budgetmanagement.application.services.RecurringIncomeService.toAddedRecurringIncomeRepresentation
+      gr.aueb.budgetmanagement.domain.entities.RecurringIncome.getId
+      gr.aueb.budgetmanagement.domain.entities.RecurringIncome.getName
+      gr.aueb.budgetmanagement.domain.valueobjects.Money.getValue
+      gr.aueb.budgetmanagement.domain.entities.RecurringIncome.getAmount
+      gr.aueb.budgetmanagement.domain.entities.RecurringIncome.getCategory
+      gr.aueb.budgetmanagement.domain.entities.RecurringIncome.getStartDate
+      gr.aueb.budgetmanagement.domain.entities.RecurringIncome.getEndDate
+      gr.aueb.budgetmanagement.domain.entities.RecurringIncome.getLastAppliedDate
+      gr.aueb.budgetmanagement.domain.entities.RecurringIncome.isStopped
+
+Endpoint: RecurringIncomeResource.updateRecurringIncome
+Defined Entities: [gr.aueb.budgetmanagement.domain.entities.RecurringIncome]
+Created Entities: [gr.aueb.budgetmanagement.domain.entities.User]
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.presentation.api.requests.StopRecurringIncomeRequest.is_stopped
+  gr.aueb.budgetmanagement.application.services.RecurringIncomeService.updateRecurringIncome
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findById
+    gr.aueb.budgetmanagement.application.commands.UpdateRecurringIncomeCommand.userId
+    gr.aueb.budgetmanagement.domain.entities.User.getRecurringIncomes
+    gr.aueb.budgetmanagement.domain.entities.RecurringIncome.getId
+    gr.aueb.budgetmanagement.application.commands.UpdateRecurringIncomeCommand.recurringIncomeId
+    gr.aueb.budgetmanagement.domain.entities.RecurringIncome.stop
+    gr.aueb.budgetmanagement.application.commands.UpdateRecurringIncomeCommand.isStopped
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.save
+      jakarta.persistence.EntityManager.persist
+
+Endpoint: RecurringIncomeResource.deleteRecurringIncome
+Defined Entities: []
+Created Entities: [gr.aueb.budgetmanagement.domain.entities.User]
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.application.services.RecurringIncomeService.deleteRecurringIncome
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findById
+    gr.aueb.budgetmanagement.domain.entities.User.getRecurringIncomes
+    gr.aueb.budgetmanagement.domain.entities.RecurringIncome.getId
+    gr.aueb.budgetmanagement.domain.entities.User.removeRecurringIncome
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.save
+      jakarta.persistence.EntityManager.persist
+
+Endpoint: IncomeResource.getIncomeCategories [ReadOnly]
+Defined Entities: []
+Created Entities: []
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.domain.enums.IncomeCategory.values
+
+Endpoint: IncomeResource.getIncomes [ReadOnly]
+Defined Entities: []
+Created Entities: []
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.application.services.IncomeService.getIncomes
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findById
+    gr.aueb.budgetmanagement.domain.entities.User.getIncomes
+    gr.aueb.budgetmanagement.domain.entities.Income.getDate
+    gr.aueb.budgetmanagement.domain.entities.Income.getCategory
+    gr.aueb.budgetmanagement.application.services.IncomeService.toAddedIncomeRepresentationList
+
+Endpoint: IncomeResource.createIncome
+Defined Entities: [gr.aueb.budgetmanagement.domain.entities.Income, gr.aueb.budgetmanagement.domain.entities.User]
+Created Entities: [gr.aueb.budgetmanagement.domain.entities.Income, gr.aueb.budgetmanagement.domain.entities.User]
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.presentation.api.requests.AddIncomeRequest.amount
+  gr.aueb.budgetmanagement.presentation.api.requests.AddIncomeRequest.category
+  gr.aueb.budgetmanagement.presentation.api.requests.AddIncomeRequest.date
+  gr.aueb.budgetmanagement.application.services.IncomeService.createIncome
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findById
+    gr.aueb.budgetmanagement.application.commands.AddIncomeCommand.userId
+    gr.aueb.budgetmanagement.domain.entities.User.addIncome
+      gr.aueb.budgetmanagement.domain.entities.Income.create
+    gr.aueb.budgetmanagement.application.commands.AddIncomeCommand.amount
+    gr.aueb.budgetmanagement.application.commands.AddIncomeCommand.date
+    gr.aueb.budgetmanagement.application.commands.AddIncomeCommand.category
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.save
+      jakarta.persistence.EntityManager.persist
+    gr.aueb.budgetmanagement.domain.entities.Income.getId
+    gr.aueb.budgetmanagement.domain.valueobjects.Money.getValue
+    gr.aueb.budgetmanagement.domain.entities.Income.getAmount
+    gr.aueb.budgetmanagement.domain.entities.Income.getDate
+    gr.aueb.budgetmanagement.domain.entities.Income.getCategory
+
+Endpoint: IncomeResource.updateIncome
+Defined Entities: [gr.aueb.budgetmanagement.domain.entities.Income]
+Created Entities: [gr.aueb.budgetmanagement.domain.entities.User]
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.presentation.api.requests.UpdateIncomeRequest.amount
+  gr.aueb.budgetmanagement.presentation.api.requests.UpdateIncomeRequest.date
+  gr.aueb.budgetmanagement.presentation.api.requests.UpdateIncomeRequest.category
+  gr.aueb.budgetmanagement.application.services.IncomeService.updateIncome
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findById
+    gr.aueb.budgetmanagement.application.commands.UpdateIncomeCommand.userId
+    gr.aueb.budgetmanagement.domain.entities.User.getIncomes
+    gr.aueb.budgetmanagement.domain.entities.Income.getId
+    gr.aueb.budgetmanagement.application.commands.UpdateIncomeCommand.incomeId
+    gr.aueb.budgetmanagement.domain.entities.Income.update
+    gr.aueb.budgetmanagement.application.commands.UpdateIncomeCommand.amount
+    gr.aueb.budgetmanagement.application.commands.UpdateIncomeCommand.date
+    gr.aueb.budgetmanagement.application.commands.UpdateIncomeCommand.category
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.save
+      jakarta.persistence.EntityManager.persist
+    gr.aueb.budgetmanagement.domain.valueobjects.Money.getValue
+    gr.aueb.budgetmanagement.domain.entities.Income.getAmount
+    gr.aueb.budgetmanagement.domain.entities.Income.getDate
+    gr.aueb.budgetmanagement.domain.entities.Income.getCategory
+
+Endpoint: IncomeResource.deleteIncome
+Defined Entities: []
+Created Entities: [gr.aueb.budgetmanagement.domain.entities.User]
+Deleted Entities: []
+Calls: 
+  gr.aueb.budgetmanagement.application.services.IncomeService.deleteIncome
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.findById
+    gr.aueb.budgetmanagement.domain.entities.User.removeIncome
+      gr.aueb.budgetmanagement.domain.entities.User.getIncomes
+      gr.aueb.budgetmanagement.domain.entities.Income.getId
+    gr.aueb.budgetmanagement.application.repositories.UserRepository.save
+      jakarta.persistence.EntityManager.persist
+
+
+Cluster:
+	PiggyBank
+	PersonalPiggyBank
+	GroupPiggyBank
+	PiggyBankAllocation
+
+Cluster:
+	RecurringIncome
+	Savings
+	Income
+	SavingsOperation
+	RecurringExpense
+	Group
+	Invitation
+	Expense
+	User

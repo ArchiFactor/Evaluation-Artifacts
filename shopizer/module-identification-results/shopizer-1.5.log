@@ -1,0 +1,748 @@
+===== Graph after static association =====
+Vertex TaxRateDescription is connected to:
+	(TaxRate, weight: 0.75, type: OWNERSHIP)
+Vertex OrderAccount is connected to:
+	(Order, weight: 0.1, type: REFERENCE)
+	(OrderAccountProduct, weight: 0.75, type: OWNERSHIP)
+Vertex Catalog is connected to:
+	(CatalogCategoryEntry, weight: 0.75, type: OWNERSHIP)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+Vertex CustomerOptionValueDescription is connected to:
+	(CustomerOptionValue, weight: 0.75, type: OWNERSHIP)
+Vertex CustomerOptionDescription is connected to:
+	(CustomerOption, weight: 0.75, type: OWNERSHIP)
+Vertex OrderAccountProduct is connected to:
+	(OrderAccount, weight: 0.75, type: OWNERSHIP)
+	(OrderProduct, weight: 0.1, type: REFERENCE)
+Vertex ManufacturerDescription is connected to:
+	(Manufacturer, weight: 0.75, type: OWNERSHIP)
+Vertex ZoneDescription is connected to:
+	(Zone, weight: 0.75, type: OWNERSHIP)
+Vertex Zone is connected to:
+	(ZoneDescription, weight: 0.75, type: OWNERSHIP)
+	(Country, weight: 0.75, type: OWNERSHIP)
+	(TaxRate, weight: 0.1, type: REFERENCE)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(ShippingOrigin, weight: 0.1, type: REFERENCE)
+Vertex SystemConfiguration is connected to:
+Vertex ProductImageDescription is connected to:
+	(ProductImage, weight: 0.75, type: OWNERSHIP)
+Vertex CustomerOptin is connected to:
+	(Optin, weight: 0.1, type: REFERENCE)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+Vertex ProductPriceDescription is connected to:
+	(ProductPrice, weight: 0.75, type: OWNERSHIP)
+Vertex CustomerOption is connected to:
+	(CustomerOptionDescription, weight: 0.75, type: OWNERSHIP)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(CustomerAttribute, weight: 0.1, type: REFERENCE)
+	(CustomerOptionSet, weight: 0.1, type: REFERENCE)
+Vertex CustomerOptionValue is connected to:
+	(CustomerOptionValueDescription, weight: 0.75, type: OWNERSHIP)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(CustomerAttribute, weight: 0.1, type: REFERENCE)
+	(CustomerOptionSet, weight: 0.1, type: REFERENCE)
+Vertex Manufacturer is connected to:
+	(ManufacturerDescription, weight: 0.75, type: OWNERSHIP)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(Product, weight: 0.1, type: REFERENCE)
+Vertex ShoppingCartAttributeItem is connected to:
+	(ProductAttribute, weight: 0.1, type: REFERENCE)
+	(ShoppingCartItem, weight: 0.75, type: OWNERSHIP)
+Vertex OrderProduct is connected to:
+	(OrderAccountProduct, weight: 0.1, type: REFERENCE)
+	(Order, weight: 0.75, type: OWNERSHIP)
+	(OrderProductAttribute, weight: 0.75, type: OWNERSHIP)
+	(OrderProductPrice, weight: 0.75, type: OWNERSHIP)
+	(OrderProductDownload, weight: 0.75, type: OWNERSHIP)
+Vertex ShoppingCart is connected to:
+	(ShoppingCartItem, weight: 0.75, type: OWNERSHIP)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+Vertex CustomerReview is connected to:
+	(Customer, weight: 0.1, type: REFERENCE)
+	(CustomerReviewDescription, weight: 0.75, type: OWNERSHIP)
+Vertex CategoryDescription is connected to:
+	(Category, weight: 0.75, type: OWNERSHIP)
+Vertex Language is connected to:
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(Customer, weight: 0.1, type: REFERENCE)
+	(User, weight: 0.1, type: REFERENCE)
+Vertex TaxRate is connected to:
+	(TaxRateDescription, weight: 0.75, type: OWNERSHIP)
+	(TaxClass, weight: 0.1, type: REFERENCE)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(Country, weight: 0.1, type: REFERENCE)
+	(Zone, weight: 0.1, type: REFERENCE)
+Vertex Category is connected to:
+	(CategoryDescription, weight: 0.75, type: OWNERSHIP)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(Product, weight: 0.1, type: REFERENCE)
+	(CatalogCategoryEntry, weight: 0.1, type: REFERENCE)
+Vertex OrderAttribute is connected to:
+	(Order, weight: 0.75, type: OWNERSHIP)
+Vertex FileHistory is connected to:
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+Vertex CustomerAttribute is connected to:
+	(CustomerOption, weight: 0.1, type: REFERENCE)
+	(CustomerOptionValue, weight: 0.1, type: REFERENCE)
+	(Customer, weight: 0.75, type: OWNERSHIP)
+Vertex ProductVariantGroup is connected to:
+	(ProductVariantImage, weight: 0.75, type: OWNERSHIP)
+	(ProductVariant, weight: 0.4, type: CASCADE)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+Vertex ProductRelationship is connected to:
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(Product, weight: 0.75, type: OWNERSHIP)
+Vertex GeoZone is connected to:
+	(GeoZoneDescription, weight: 0.75, type: OWNERSHIP)
+	(Country, weight: 0.1, type: REFERENCE)
+Vertex Optin is connected to:
+	(CustomerOptin, weight: 0.1, type: REFERENCE)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+Vertex CountryDescription is connected to:
+	(Country, weight: 0.75, type: OWNERSHIP)
+Vertex Currency is connected to:
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(Order, weight: 0.1, type: REFERENCE)
+Vertex ProductVariantImage is connected to:
+	(ProductVariantGroup, weight: 0.75, type: OWNERSHIP)
+	(ProductVariantImageDescription, weight: 0.75, type: OWNERSHIP)
+Vertex OrderTotal is connected to:
+	(Order, weight: 0.75, type: OWNERSHIP)
+Vertex Content is connected to:
+	(ContentDescription, weight: 0.75, type: OWNERSHIP)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+Vertex OrderProductAttribute is connected to:
+	(OrderProduct, weight: 0.75, type: OWNERSHIP)
+Vertex ProductAttribute is connected to:
+	(ShoppingCartAttributeItem, weight: 0.1, type: REFERENCE)
+	(ProductOption, weight: 0.1, type: REFERENCE)
+	(ProductOptionValue, weight: 0.1, type: REFERENCE)
+	(Product, weight: 0.75, type: OWNERSHIP)
+Vertex OrderProductPrice is connected to:
+	(OrderProduct, weight: 0.75, type: OWNERSHIP)
+Vertex MerchantLog is connected to:
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+Vertex Customer is connected to:
+	(CustomerReview, weight: 0.1, type: REFERENCE)
+	(CustomerAttribute, weight: 0.75, type: OWNERSHIP)
+	(Language, weight: 0.1, type: REFERENCE)
+	(ProductReview, weight: 0.1, type: REFERENCE)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(Group, weight: 0.1, type: REFERENCE)
+	(Product, weight: 0.1, type: REFERENCE)
+Vertex ProductImage is connected to:
+	(ProductImageDescription, weight: 0.75, type: OWNERSHIP)
+	(Product, weight: 0.75, type: OWNERSHIP)
+Vertex Permission is connected to:
+	(Group, weight: 0.4, type: CASCADE)
+Vertex ProductTypeDescription is connected to:
+	(ProductType, weight: 0.75, type: OWNERSHIP)
+Vertex Transaction is connected to:
+	(Order, weight: 0.1, type: REFERENCE)
+Vertex Country is connected to:
+	(Zone, weight: 0.75, type: OWNERSHIP)
+	(TaxRate, weight: 0.1, type: REFERENCE)
+	(GeoZone, weight: 0.1, type: REFERENCE)
+	(CountryDescription, weight: 0.75, type: OWNERSHIP)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(ShippingOrigin, weight: 0.1, type: REFERENCE)
+Vertex CustomerOptionSet is connected to:
+	(CustomerOption, weight: 0.1, type: REFERENCE)
+	(CustomerOptionValue, weight: 0.1, type: REFERENCE)
+Vertex MerchantStore is connected to:
+	(Catalog, weight: 0.1, type: REFERENCE)
+	(CustomerOptin, weight: 0.1, type: REFERENCE)
+	(CustomerOption, weight: 0.1, type: REFERENCE)
+	(CustomerOptionValue, weight: 0.1, type: REFERENCE)
+	(Manufacturer, weight: 0.1, type: REFERENCE)
+	(ShoppingCart, weight: 0.1, type: REFERENCE)
+	(Language, weight: 0.1, type: REFERENCE)
+	(TaxRate, weight: 0.1, type: REFERENCE)
+	(Category, weight: 0.1, type: REFERENCE)
+	(FileHistory, weight: 0.1, type: REFERENCE)
+	(ProductVariantGroup, weight: 0.1, type: REFERENCE)
+	(ProductRelationship, weight: 0.1, type: REFERENCE)
+	(Optin, weight: 0.1, type: REFERENCE)
+	(Content, weight: 0.1, type: REFERENCE)
+	(MerchantLog, weight: 0.1, type: REFERENCE)
+	(Customer, weight: 0.1, type: REFERENCE)
+	(Country, weight: 0.1, type: REFERENCE)
+	(Zone, weight: 0.1, type: REFERENCE)
+	(Currency, weight: 0.1, type: REFERENCE)
+	(SystemNotification, weight: 0.1, type: REFERENCE)
+	(ShippingOrigin, weight: 0.1, type: REFERENCE)
+	(ProductOption, weight: 0.1, type: REFERENCE)
+	(Order, weight: 0.1, type: REFERENCE)
+	(MerchantConfiguration, weight: 0.1, type: REFERENCE)
+	(Product, weight: 0.1, type: REFERENCE)
+	(ProductOptionValue, weight: 0.1, type: REFERENCE)
+	(ProductVariation, weight: 0.1, type: REFERENCE)
+	(ProductAvailability, weight: 0.1, type: REFERENCE)
+	(ProductType, weight: 0.1, type: REFERENCE)
+	(ProductOptionSet, weight: 0.1, type: REFERENCE)
+	(TaxClass, weight: 0.1, type: REFERENCE)
+	(User, weight: 0.1, type: REFERENCE)
+Vertex DigitalProduct is connected to:
+	(Product, weight: 0.1, type: REFERENCE)
+Vertex SystemNotification is connected to:
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(User, weight: 0.1, type: REFERENCE)
+Vertex ProductVariantImageDescription is connected to:
+	(ProductVariantImage, weight: 0.75, type: OWNERSHIP)
+	(Product, weight: 0.1, type: REFERENCE)
+Vertex OrderProductDownload is connected to:
+	(OrderProduct, weight: 0.75, type: OWNERSHIP)
+Vertex GeoZoneDescription is connected to:
+	(GeoZone, weight: 0.75, type: OWNERSHIP)
+Vertex ShippingOrigin is connected to:
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(Country, weight: 0.1, type: REFERENCE)
+	(Zone, weight: 0.1, type: REFERENCE)
+Vertex Quote is connected to:
+Vertex ProductOption is connected to:
+	(ProductAttribute, weight: 0.1, type: REFERENCE)
+	(ProductOptionDescription, weight: 0.75, type: OWNERSHIP)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(ProductVariation, weight: 0.1, type: REFERENCE)
+	(ProductOptionSet, weight: 0.1, type: REFERENCE)
+Vertex ProductOptionDescription is connected to:
+	(ProductOption, weight: 0.75, type: OWNERSHIP)
+Vertex Order is connected to:
+	(OrderAccount, weight: 0.1, type: REFERENCE)
+	(OrderProduct, weight: 0.75, type: OWNERSHIP)
+	(OrderAttribute, weight: 0.75, type: OWNERSHIP)
+	(OrderTotal, weight: 0.75, type: OWNERSHIP)
+	(Transaction, weight: 0.1, type: REFERENCE)
+	(Currency, weight: 0.1, type: REFERENCE)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(OrderStatusHistory, weight: 0.75, type: OWNERSHIP)
+Vertex Group is connected to:
+	(Customer, weight: 0.1, type: REFERENCE)
+	(Permission, weight: 0.4, type: CASCADE)
+	(User, weight: 0.1, type: REFERENCE)
+Vertex MerchantConfiguration is connected to:
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+Vertex ContentDescription is connected to:
+	(Content, weight: 0.75, type: OWNERSHIP)
+Vertex CustomerReviewDescription is connected to:
+	(CustomerReview, weight: 0.75, type: OWNERSHIP)
+Vertex Product is connected to:
+	(ProductRelationship, weight: 0.75, type: OWNERSHIP)
+	(ProductAttribute, weight: 0.75, type: OWNERSHIP)
+	(ProductImage, weight: 0.75, type: OWNERSHIP)
+	(DigitalProduct, weight: 0.1, type: REFERENCE)
+	(ProductVariantImageDescription, weight: 0.1, type: REFERENCE)
+	(ProductDescription, weight: 0.75, type: OWNERSHIP)
+	(ProductAvailability, weight: 0.75, type: OWNERSHIP)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(Category, weight: 0.1, type: REFERENCE)
+	(ProductVariant, weight: 0.75, type: OWNERSHIP)
+	(Manufacturer, weight: 0.1, type: REFERENCE)
+	(ProductType, weight: 0.1, type: REFERENCE)
+	(TaxClass, weight: 0.1, type: REFERENCE)
+	(Customer, weight: 0.1, type: REFERENCE)
+	(ShoppingCartItem, weight: 0.1, type: REFERENCE)
+	(ProductReview, weight: 0.1, type: REFERENCE)
+Vertex ShoppingCartItem is connected to:
+	(ShoppingCartAttributeItem, weight: 0.75, type: OWNERSHIP)
+	(ShoppingCart, weight: 0.75, type: OWNERSHIP)
+	(Product, weight: 0.1, type: REFERENCE)
+Vertex UserConnection is connected to:
+Vertex ProductOptionValue is connected to:
+	(ProductAttribute, weight: 0.1, type: REFERENCE)
+	(ProductOptionValueDescription, weight: 0.75, type: OWNERSHIP)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(ProductVariation, weight: 0.1, type: REFERENCE)
+	(ProductOptionSet, weight: 0.1, type: REFERENCE)
+Vertex IntegrationModule is connected to:
+Vertex ProductVariation is connected to:
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(ProductOption, weight: 0.1, type: REFERENCE)
+	(ProductOptionValue, weight: 0.1, type: REFERENCE)
+	(ProductVariant, weight: 0.1, type: REFERENCE)
+Vertex CatalogCategoryEntry is connected to:
+	(Catalog, weight: 0.75, type: OWNERSHIP)
+	(Category, weight: 0.1, type: REFERENCE)
+Vertex ProductAvailability is connected to:
+	(Product, weight: 0.75, type: OWNERSHIP)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(ProductVariant, weight: 0.75, type: OWNERSHIP)
+	(ProductPrice, weight: 0.75, type: OWNERSHIP)
+Vertex ProductReviewDescription is connected to:
+	(ProductReview, weight: 0.75, type: OWNERSHIP)
+Vertex OrderStatusHistory is connected to:
+	(Order, weight: 0.75, type: OWNERSHIP)
+Vertex ProductDescription is connected to:
+	(Product, weight: 0.75, type: OWNERSHIP)
+Vertex ProductType is connected to:
+	(ProductTypeDescription, weight: 0.75, type: OWNERSHIP)
+	(Product, weight: 0.1, type: REFERENCE)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(ProductOptionSet, weight: 0.1, type: REFERENCE)
+Vertex ProductOptionSet is connected to:
+	(ProductOption, weight: 0.1, type: REFERENCE)
+	(ProductOptionValue, weight: 0.1, type: REFERENCE)
+	(ProductType, weight: 0.1, type: REFERENCE)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+Vertex ProductOptionValueDescription is connected to:
+	(ProductOptionValue, weight: 0.75, type: OWNERSHIP)
+Vertex TaxClass is connected to:
+	(TaxRate, weight: 0.1, type: REFERENCE)
+	(Product, weight: 0.1, type: REFERENCE)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+Vertex ProductPrice is connected to:
+	(ProductPriceDescription, weight: 0.75, type: OWNERSHIP)
+	(ProductAvailability, weight: 0.75, type: OWNERSHIP)
+Vertex ProductReview is connected to:
+	(Customer, weight: 0.1, type: REFERENCE)
+	(ProductReviewDescription, weight: 0.75, type: OWNERSHIP)
+	(Product, weight: 0.1, type: REFERENCE)
+Vertex ProductVariant is connected to:
+	(ProductVariantGroup, weight: 0.4, type: CASCADE)
+	(Product, weight: 0.75, type: OWNERSHIP)
+	(ProductAvailability, weight: 0.75, type: OWNERSHIP)
+	(ProductVariation, weight: 0.1, type: REFERENCE)
+Vertex User is connected to:
+	(SystemNotification, weight: 0.1, type: REFERENCE)
+	(Group, weight: 0.1, type: REFERENCE)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(Language, weight: 0.1, type: REFERENCE)
+
+
+===== Graph after enhancement =====
+Vertex TaxRateDescription is connected to:
+	(TaxRate, weight: 0.75, type: OWNERSHIP)
+Vertex OrderAccount is connected to:
+	(Order, weight: 0.1, type: REFERENCE)
+	(OrderAccountProduct, weight: 0.75, type: OWNERSHIP)
+Vertex Catalog is connected to:
+	(CatalogCategoryEntry, weight: 0.75, type: OWNERSHIP)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+Vertex CustomerOptionValueDescription is connected to:
+	(CustomerOptionValue, weight: 0.75, type: OWNERSHIP)
+Vertex CustomerOptionDescription is connected to:
+	(CustomerOption, weight: 0.75, type: OWNERSHIP)
+Vertex OrderAccountProduct is connected to:
+	(OrderAccount, weight: 0.75, type: OWNERSHIP)
+	(OrderProduct, weight: 0.1, type: REFERENCE)
+Vertex ManufacturerDescription is connected to:
+	(Manufacturer, weight: 0.75, type: OWNERSHIP)
+Vertex ZoneDescription is connected to:
+	(Zone, weight: 0.75, type: OWNERSHIP)
+Vertex Zone is connected to:
+	(ZoneDescription, weight: 0.75, type: OWNERSHIP)
+	(Country, weight: 0.75, type: OWNERSHIP)
+	(TaxRate, weight: 0.1, type: REFERENCE)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(ShippingOrigin, weight: 0.1, type: REFERENCE)
+Vertex SystemConfiguration is connected to:
+Vertex ProductImageDescription is connected to:
+	(ProductImage, weight: 0.75, type: OWNERSHIP)
+Vertex CustomerOptin is connected to:
+	(Optin, weight: 0.1, type: REFERENCE)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+Vertex ProductPriceDescription is connected to:
+	(ProductPrice, weight: 0.75, type: OWNERSHIP)
+Vertex CustomerOption is connected to:
+	(CustomerOptionDescription, weight: 0.75, type: OWNERSHIP)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(CustomerAttribute, weight: 0.1, type: REFERENCE)
+	(CustomerOptionSet, weight: 0.1, type: REFERENCE)
+Vertex CustomerOptionValue is connected to:
+	(CustomerOptionValueDescription, weight: 0.75, type: OWNERSHIP)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(CustomerAttribute, weight: 0.1, type: REFERENCE)
+	(CustomerOptionSet, weight: 0.1, type: REFERENCE)
+Vertex Manufacturer is connected to:
+	(ManufacturerDescription, weight: 0.75, type: OWNERSHIP)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(Product, weight: 0.1, type: REFERENCE)
+Vertex ShoppingCartAttributeItem is connected to:
+	(ProductAttribute, weight: 0.1, type: REFERENCE)
+	(ShoppingCartItem, weight: 0.75, type: OWNERSHIP)
+Vertex OrderProduct is connected to:
+	(OrderAccountProduct, weight: 0.1, type: REFERENCE)
+	(Order, weight: 0.75, type: OWNERSHIP)
+	(OrderProductAttribute, weight: 0.75, type: OWNERSHIP)
+	(OrderProductPrice, weight: 0.75, type: OWNERSHIP)
+	(OrderProductDownload, weight: 0.75, type: OWNERSHIP)
+Vertex ShoppingCart is connected to:
+	(ShoppingCartItem, weight: 0.75, type: OWNERSHIP)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+Vertex CustomerReview is connected to:
+	(Customer, weight: 0.1, type: REFERENCE)
+	(CustomerReviewDescription, weight: 0.75, type: OWNERSHIP)
+Vertex CategoryDescription is connected to:
+	(Category, weight: 0.75, type: OWNERSHIP)
+Vertex Language is connected to:
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(Customer, weight: 0.1, type: REFERENCE)
+	(User, weight: 0.1, type: REFERENCE)
+Vertex TaxRate is connected to:
+	(TaxRateDescription, weight: 0.75, type: OWNERSHIP)
+	(TaxClass, weight: 0.1, type: REFERENCE)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(Country, weight: 0.1, type: REFERENCE)
+	(Zone, weight: 0.1, type: REFERENCE)
+Vertex Category is connected to:
+	(CategoryDescription, weight: 0.75, type: OWNERSHIP)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(Product, weight: 0.1, type: REFERENCE)
+	(CatalogCategoryEntry, weight: 0.1, type: REFERENCE)
+Vertex OrderAttribute is connected to:
+	(Order, weight: 0.75, type: OWNERSHIP)
+Vertex FileHistory is connected to:
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+Vertex CustomerAttribute is connected to:
+	(CustomerOption, weight: 0.1, type: REFERENCE)
+	(CustomerOptionValue, weight: 0.1, type: REFERENCE)
+	(Customer, weight: 0.75, type: OWNERSHIP)
+Vertex ProductVariantGroup is connected to:
+	(ProductVariantImage, weight: 0.75, type: OWNERSHIP)
+	(ProductVariant, weight: 0.4, type: CASCADE)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+Vertex ProductRelationship is connected to:
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(Product, weight: 0.75, type: OWNERSHIP)
+Vertex GeoZone is connected to:
+	(GeoZoneDescription, weight: 0.75, type: OWNERSHIP)
+	(Country, weight: 0.1, type: REFERENCE)
+Vertex Optin is connected to:
+	(CustomerOptin, weight: 0.1, type: REFERENCE)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+Vertex CountryDescription is connected to:
+	(Country, weight: 0.75, type: OWNERSHIP)
+Vertex Currency is connected to:
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(Order, weight: 0.1, type: REFERENCE)
+Vertex ProductVariantImage is connected to:
+	(ProductVariantGroup, weight: 0.75, type: OWNERSHIP)
+	(ProductVariantImageDescription, weight: 0.75, type: OWNERSHIP)
+Vertex OrderTotal is connected to:
+	(Order, weight: 0.75, type: OWNERSHIP)
+Vertex Content is connected to:
+	(ContentDescription, weight: 0.75, type: OWNERSHIP)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+Vertex OrderProductAttribute is connected to:
+	(OrderProduct, weight: 0.75, type: OWNERSHIP)
+Vertex ProductAttribute is connected to:
+	(ShoppingCartAttributeItem, weight: 0.1, type: REFERENCE)
+	(ProductOption, weight: 0.1, type: REFERENCE)
+	(ProductOptionValue, weight: 0.1, type: REFERENCE)
+	(Product, weight: 0.75, type: OWNERSHIP)
+Vertex OrderProductPrice is connected to:
+	(OrderProduct, weight: 0.75, type: OWNERSHIP)
+Vertex MerchantLog is connected to:
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+Vertex Customer is connected to:
+	(CustomerReview, weight: 0.1, type: REFERENCE)
+	(CustomerAttribute, weight: 0.75, type: OWNERSHIP)
+	(Language, weight: 0.1, type: REFERENCE)
+	(ProductReview, weight: 0.1, type: REFERENCE)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(Group, weight: 0.1, type: REFERENCE)
+	(Product, weight: 0.1, type: REFERENCE)
+Vertex ProductImage is connected to:
+	(ProductImageDescription, weight: 0.75, type: OWNERSHIP)
+	(Product, weight: 0.75, type: OWNERSHIP)
+Vertex Permission is connected to:
+	(Group, weight: 0.4, type: CASCADE)
+Vertex ProductTypeDescription is connected to:
+	(ProductType, weight: 0.75, type: OWNERSHIP)
+Vertex Transaction is connected to:
+	(Order, weight: 0.1, type: REFERENCE)
+Vertex Country is connected to:
+	(Zone, weight: 0.75, type: OWNERSHIP)
+	(TaxRate, weight: 0.1, type: REFERENCE)
+	(GeoZone, weight: 0.1, type: REFERENCE)
+	(CountryDescription, weight: 0.75, type: OWNERSHIP)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(ShippingOrigin, weight: 0.1, type: REFERENCE)
+Vertex CustomerOptionSet is connected to:
+	(CustomerOption, weight: 0.1, type: REFERENCE)
+	(CustomerOptionValue, weight: 0.1, type: REFERENCE)
+Vertex MerchantStore is connected to:
+	(Catalog, weight: 0.1, type: REFERENCE)
+	(CustomerOptin, weight: 0.1, type: REFERENCE)
+	(CustomerOption, weight: 0.1, type: REFERENCE)
+	(CustomerOptionValue, weight: 0.1, type: REFERENCE)
+	(Manufacturer, weight: 0.1, type: REFERENCE)
+	(ShoppingCart, weight: 0.1, type: REFERENCE)
+	(Language, weight: 0.1, type: REFERENCE)
+	(TaxRate, weight: 0.1, type: REFERENCE)
+	(Category, weight: 0.1, type: REFERENCE)
+	(FileHistory, weight: 0.1, type: REFERENCE)
+	(ProductVariantGroup, weight: 0.1, type: REFERENCE)
+	(ProductRelationship, weight: 0.1, type: REFERENCE)
+	(Optin, weight: 0.1, type: REFERENCE)
+	(Content, weight: 0.1, type: REFERENCE)
+	(MerchantLog, weight: 0.1, type: REFERENCE)
+	(Customer, weight: 0.1, type: REFERENCE)
+	(Country, weight: 0.1, type: REFERENCE)
+	(Zone, weight: 0.1, type: REFERENCE)
+	(Currency, weight: 0.1, type: REFERENCE)
+	(SystemNotification, weight: 0.1, type: REFERENCE)
+	(ShippingOrigin, weight: 0.1, type: REFERENCE)
+	(ProductOption, weight: 0.1, type: REFERENCE)
+	(Order, weight: 0.1, type: REFERENCE)
+	(MerchantConfiguration, weight: 0.1, type: REFERENCE)
+	(Product, weight: 0.1, type: REFERENCE)
+	(ProductOptionValue, weight: 0.1, type: REFERENCE)
+	(ProductVariation, weight: 0.1, type: REFERENCE)
+	(ProductAvailability, weight: 0.1, type: REFERENCE)
+	(ProductType, weight: 0.1, type: REFERENCE)
+	(ProductOptionSet, weight: 0.1, type: REFERENCE)
+	(TaxClass, weight: 0.1, type: REFERENCE)
+	(User, weight: 0.1, type: REFERENCE)
+Vertex DigitalProduct is connected to:
+	(Product, weight: 0.1, type: REFERENCE)
+Vertex SystemNotification is connected to:
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(User, weight: 0.1, type: REFERENCE)
+Vertex ProductVariantImageDescription is connected to:
+	(ProductVariantImage, weight: 0.75, type: OWNERSHIP)
+	(Product, weight: 0.1, type: REFERENCE)
+Vertex OrderProductDownload is connected to:
+	(OrderProduct, weight: 0.75, type: OWNERSHIP)
+Vertex GeoZoneDescription is connected to:
+	(GeoZone, weight: 0.75, type: OWNERSHIP)
+Vertex ShippingOrigin is connected to:
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(Country, weight: 0.1, type: REFERENCE)
+	(Zone, weight: 0.1, type: REFERENCE)
+Vertex Quote is connected to:
+Vertex ProductOption is connected to:
+	(ProductAttribute, weight: 0.1, type: REFERENCE)
+	(ProductOptionDescription, weight: 0.75, type: OWNERSHIP)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(ProductVariation, weight: 0.1, type: REFERENCE)
+	(ProductOptionSet, weight: 0.1, type: REFERENCE)
+Vertex ProductOptionDescription is connected to:
+	(ProductOption, weight: 0.75, type: OWNERSHIP)
+Vertex Order is connected to:
+	(OrderAccount, weight: 0.1, type: REFERENCE)
+	(OrderProduct, weight: 0.75, type: OWNERSHIP)
+	(OrderAttribute, weight: 0.75, type: OWNERSHIP)
+	(OrderTotal, weight: 0.75, type: OWNERSHIP)
+	(Transaction, weight: 0.1, type: REFERENCE)
+	(Currency, weight: 0.1, type: REFERENCE)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(OrderStatusHistory, weight: 0.75, type: OWNERSHIP)
+Vertex Group is connected to:
+	(Customer, weight: 0.1, type: REFERENCE)
+	(Permission, weight: 0.4, type: CASCADE)
+	(User, weight: 0.1, type: REFERENCE)
+Vertex MerchantConfiguration is connected to:
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+Vertex ContentDescription is connected to:
+	(Content, weight: 0.75, type: OWNERSHIP)
+Vertex CustomerReviewDescription is connected to:
+	(CustomerReview, weight: 0.75, type: OWNERSHIP)
+Vertex Product is connected to:
+	(ProductRelationship, weight: 0.75, type: OWNERSHIP)
+	(ProductAttribute, weight: 0.75, type: OWNERSHIP)
+	(ProductImage, weight: 0.75, type: OWNERSHIP)
+	(DigitalProduct, weight: 0.1, type: REFERENCE)
+	(ProductVariantImageDescription, weight: 0.1, type: REFERENCE)
+	(ProductDescription, weight: 0.75, type: OWNERSHIP)
+	(ProductAvailability, weight: 0.75, type: OWNERSHIP)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(Category, weight: 0.1, type: REFERENCE)
+	(ProductVariant, weight: 0.75, type: OWNERSHIP)
+	(Manufacturer, weight: 0.1, type: REFERENCE)
+	(ProductType, weight: 0.1, type: REFERENCE)
+	(TaxClass, weight: 0.1, type: REFERENCE)
+	(Customer, weight: 0.1, type: REFERENCE)
+	(ShoppingCartItem, weight: 0.1, type: REFERENCE)
+	(ProductReview, weight: 0.1, type: REFERENCE)
+Vertex ShoppingCartItem is connected to:
+	(ShoppingCartAttributeItem, weight: 0.75, type: OWNERSHIP)
+	(ShoppingCart, weight: 0.75, type: OWNERSHIP)
+	(Product, weight: 0.1, type: REFERENCE)
+Vertex UserConnection is connected to:
+Vertex ProductOptionValue is connected to:
+	(ProductAttribute, weight: 0.1, type: REFERENCE)
+	(ProductOptionValueDescription, weight: 0.75, type: OWNERSHIP)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(ProductVariation, weight: 0.1, type: REFERENCE)
+	(ProductOptionSet, weight: 0.1, type: REFERENCE)
+Vertex IntegrationModule is connected to:
+Vertex ProductVariation is connected to:
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(ProductOption, weight: 0.1, type: REFERENCE)
+	(ProductOptionValue, weight: 0.1, type: REFERENCE)
+	(ProductVariant, weight: 0.1, type: REFERENCE)
+Vertex CatalogCategoryEntry is connected to:
+	(Catalog, weight: 0.75, type: OWNERSHIP)
+	(Category, weight: 0.1, type: REFERENCE)
+Vertex ProductAvailability is connected to:
+	(Product, weight: 0.75, type: OWNERSHIP)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(ProductVariant, weight: 0.75, type: OWNERSHIP)
+	(ProductPrice, weight: 0.75, type: OWNERSHIP)
+Vertex ProductReviewDescription is connected to:
+	(ProductReview, weight: 0.75, type: OWNERSHIP)
+Vertex OrderStatusHistory is connected to:
+	(Order, weight: 0.75, type: OWNERSHIP)
+Vertex ProductDescription is connected to:
+	(Product, weight: 0.75, type: OWNERSHIP)
+Vertex ProductType is connected to:
+	(ProductTypeDescription, weight: 0.75, type: OWNERSHIP)
+	(Product, weight: 0.1, type: REFERENCE)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(ProductOptionSet, weight: 0.1, type: REFERENCE)
+Vertex ProductOptionSet is connected to:
+	(ProductOption, weight: 0.1, type: REFERENCE)
+	(ProductOptionValue, weight: 0.1, type: REFERENCE)
+	(ProductType, weight: 0.1, type: REFERENCE)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+Vertex ProductOptionValueDescription is connected to:
+	(ProductOptionValue, weight: 0.75, type: OWNERSHIP)
+Vertex TaxClass is connected to:
+	(TaxRate, weight: 0.1, type: REFERENCE)
+	(Product, weight: 0.1, type: REFERENCE)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+Vertex ProductPrice is connected to:
+	(ProductPriceDescription, weight: 0.75, type: OWNERSHIP)
+	(ProductAvailability, weight: 0.75, type: OWNERSHIP)
+Vertex ProductReview is connected to:
+	(Customer, weight: 0.1, type: REFERENCE)
+	(ProductReviewDescription, weight: 0.75, type: OWNERSHIP)
+	(Product, weight: 0.1, type: REFERENCE)
+Vertex ProductVariant is connected to:
+	(ProductVariantGroup, weight: 0.4, type: CASCADE)
+	(Product, weight: 0.75, type: OWNERSHIP)
+	(ProductAvailability, weight: 0.75, type: OWNERSHIP)
+	(ProductVariation, weight: 0.1, type: REFERENCE)
+Vertex User is connected to:
+	(SystemNotification, weight: 0.1, type: REFERENCE)
+	(Group, weight: 0.1, type: REFERENCE)
+	(MerchantStore, weight: 0.1, type: REFERENCE)
+	(Language, weight: 0.1, type: REFERENCE)
+
+
+ Callgraphs:
+
+Cluster:
+	ShippingOrigin
+	CountryDescription
+	Country
+	Zone
+	ZoneDescription
+
+Cluster:
+	OrderTotal
+	OrderProductDownload
+	OrderStatusHistory
+	OrderProductAttribute
+	Order
+	OrderProductPrice
+	OrderAttribute
+	OrderProduct
+	Transaction
+
+Cluster:
+	ProductAvailability
+	DigitalProduct
+	ProductImageDescription
+	Product
+	ProductPriceDescription
+	ProductRelationship
+	ProductDescription
+	ProductAttribute
+	ProductImage
+	ProductPrice
+	ProductVariant
+
+Cluster:
+	ProductVariantImage
+	ProductVariantGroup
+	ProductVariantImageDescription
+
+Cluster:
+	ShoppingCartItem
+	ShoppingCartAttributeItem
+	ShoppingCart
+
+Cluster:
+	TaxRateDescription
+	TaxRate
+	TaxClass
+
+Cluster:
+	ProductOption
+	ProductOptionDescription
+	ProductType
+	ProductOptionSet
+	ProductOptionValue
+	ProductOptionValueDescription
+	ProductTypeDescription
+	ProductVariation
+
+Cluster:
+	CustomerOption
+	CustomerOptionValueDescription
+	CustomerOptionDescription
+	CustomerOptionValue
+	CustomerOptionSet
+
+Cluster:
+	CatalogCategoryEntry
+	CategoryDescription
+	Catalog
+	Category
+
+Cluster:
+	OrderAccount
+	OrderAccountProduct
+
+Cluster:
+	Manufacturer
+	ManufacturerDescription
+
+Cluster:
+	ProductReviewDescription
+	ProductReview
+
+Cluster:
+	Content
+	ContentDescription
+
+Cluster:
+	CustomerReview
+	CustomerReviewDescription
+
+Cluster:
+	GeoZoneDescription
+	GeoZone
+
+Cluster:
+	CustomerAttribute
+	Group
+	Customer
+	Permission
+
+Cluster:
+	CustomerOptin
+	SystemNotification
+	Optin
+	Language
+	MerchantLog
+	Currency
+	MerchantConfiguration
+	User
+	MerchantStore
+	FileHistory
+
+Cluster:
+	UserConnection
+
+Cluster:
+	Quote
+
+Cluster:
+	IntegrationModule
+
+Cluster:
+	SystemConfiguration

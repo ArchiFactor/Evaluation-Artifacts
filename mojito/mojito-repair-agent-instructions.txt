@@ -1,0 +1,13 @@
+How to run the test suite:
+- The suite is only green on Linux. On Windows exactly 45 tests fail on hard-coded "\n" vs CRLF and Path-separator assertions (14 in common, 31 in webapp). Those are pre-existing platform artifacts, not your breakage. Run the tests in Docker (Docker Desktop is already running).
+- Your edits are uncommitted and the runner builds from a clone, which carries committed state only. The command below therefore first exports your working-tree changes to wip.patch, and the script re-applies that patch inside the container. Always run it as the single chained command below so the patch is never stale.
+- If you create any NEW (untracked) file, run `git add -N .` in /d/scripts/box__mojito before the command above, or the patch will not carry it.
+- Run the command below in the FOREGROUND and wait for it to finish: the full reactor takes about 12 minutes and your Bash timeout allows 30, so it completes in a single call. It writes the full log to run.log (read it for any failure details) and prints the result summary at the end.
+- If you ever need to watch a long-running background command, use the Monitor tool with an until-loop that checks every 20 seconds (e.g. `until grep -q "Reactor Summary" run.log; do sleep 20; done`), so the wait happens inside one call.
+- Expected green baseline: 2013 tests, 0 failures, 0 errors, 96 skipped.
+
+cd /d/scripts/box__mojito && git diff --binary > /c/Users/Giannis/Desktop/Thesis/dataset/evaluation-results/mojito/wip.patch && MSYS_NO_PATHCONV=1 docker run --rm \
+    -v "D:/scripts/box__mojito:/repo:ro" \
+    -v "C:/Users/Giannis/.m2/repository:/m2" \
+    -v "C:/Users/Giannis/Desktop/Thesis/dataset/evaluation-results/mojito:/sp" \
+    maven:3.9-eclipse-temurin-21 sh /sp/mojito-linux-worktree.sh > /c/Users/Giannis/Desktop/Thesis/dataset/evaluation-results/mojito/run.log 2>&1; grep -aE "Tests run:|Reactor Summary|BUILD (SUCCESS|FAILURE)" /c/Users/Giannis/Desktop/Thesis/dataset/evaluation-results/mojito/run.log | tail -30

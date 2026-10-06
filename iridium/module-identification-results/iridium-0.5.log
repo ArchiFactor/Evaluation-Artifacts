@@ -1,0 +1,169 @@
+===== Graph after static association =====
+Vertex AccessTokenEntity is connected to:
+	(RefreshTokenEntity, weight: 0.75, type: OWNERSHIP)
+Vertex EmailVerificationTokenEntity is connected to:
+	(IdentityEmailEntity, weight: 0.75, type: OWNERSHIP)
+Vertex IdentityPropertyEntity is connected to:
+	(IdentityEntity, weight: 0.75, type: OWNERSHIP)
+Vertex ApplicationEntity is connected to:
+	(IdentityEntity, weight: 0.1, type: REFERENCE)
+	(ApplicationTypeEntity, weight: 0.1, type: REFERENCE)
+	(ClientSecretEntity, weight: 0.75, type: OWNERSHIP)
+	(ScopeEntity, weight: 0.75, type: OWNERSHIP)
+Vertex ExternalIdentityProviderTemplateEntity is connected to:
+	(ExternalIdentityProviderParameterTemplateEntity, weight: 0.75, type: OWNERSHIP)
+	(ExternalIdentityProviderEntity, weight: 0.1, type: REFERENCE)
+Vertex IdentityEmailEntity is connected to:
+	(EmailVerificationTokenEntity, weight: 0.75, type: OWNERSHIP)
+	(IdentityEntity, weight: 0.75, type: OWNERSHIP)
+Vertex AuthenticationEntity is connected to:
+	(IdentityEntity, weight: 0.1, type: REFERENCE)
+Vertex ApplicationTypeEntity is connected to:
+	(ApplicationEntity, weight: 0.1, type: REFERENCE)
+Vertex ProfileEntity is connected to:
+	(IdentityEntity, weight: 0.75, type: OWNERSHIP)
+Vertex AuthorizationCodeEntity is connected to:
+Vertex RefreshTokenEntity is connected to:
+	(AccessTokenEntity, weight: 0.75, type: OWNERSHIP)
+Vertex ExternalIdentityProviderEntity is connected to:
+	(ExternalIdentityProviderTemplateEntity, weight: 0.1, type: REFERENCE)
+	(TenantEntity, weight: 0.1, type: REFERENCE)
+	(ExternalIdentityProviderParameterEntity, weight: 0.75, type: OWNERSHIP)
+	(InProgressExternalIdentityProviderAuthorizationEntity, weight: 0.1, type: REFERENCE)
+	(IdentityEntity, weight: 0.1, type: REFERENCE)
+Vertex RoleEntity is connected to:
+	(IdentityEntity, weight: 0.4, type: CASCADE)
+Vertex ExternalIdentityProviderParameterEntity is connected to:
+	(ExternalIdentityProviderEntity, weight: 0.75, type: OWNERSHIP)
+Vertex IdentityCreateSessionDetails is connected to:
+	(IdentityEntity, weight: 0.75, type: OWNERSHIP)
+Vertex InProgressExternalIdentityProviderAuthorizationEntity is connected to:
+	(ExternalIdentityProviderEntity, weight: 0.1, type: REFERENCE)
+Vertex ExternalIdentityProviderParameterTemplateEntity is connected to:
+	(ExternalIdentityProviderTemplateEntity, weight: 0.75, type: OWNERSHIP)
+Vertex IdentityEntity is connected to:
+	(IdentityPropertyEntity, weight: 0.75, type: OWNERSHIP)
+	(ApplicationEntity, weight: 0.1, type: REFERENCE)
+	(IdentityEmailEntity, weight: 0.75, type: OWNERSHIP)
+	(AuthenticationEntity, weight: 0.1, type: REFERENCE)
+	(ProfileEntity, weight: 0.75, type: OWNERSHIP)
+	(RoleEntity, weight: 0.4, type: CASCADE)
+	(IdentityCreateSessionDetails, weight: 0.75, type: OWNERSHIP)
+	(TenantEntity, weight: 0.1, type: REFERENCE)
+	(ExternalIdentityProviderEntity, weight: 0.1, type: REFERENCE)
+	(ScopeEntity, weight: 0.75, type: OWNERSHIP)
+Vertex ScopeEntity is connected to:
+	(ApplicationEntity, weight: 0.75, type: OWNERSHIP)
+	(IdentityEntity, weight: 0.75, type: OWNERSHIP)
+Vertex ClientSecretEntity is connected to:
+	(ApplicationEntity, weight: 0.75, type: OWNERSHIP)
+Vertex LoginDescriptorEntity is connected to:
+	(TenantEntity, weight: 0.75, type: OWNERSHIP)
+Vertex TenantEntity is connected to:
+	(ExternalIdentityProviderEntity, weight: 0.1, type: REFERENCE)
+	(IdentityEntity, weight: 0.1, type: REFERENCE)
+	(LoginDescriptorEntity, weight: 0.75, type: OWNERSHIP)
+
+
+===== Graph after enhancement =====
+Vertex AccessTokenEntity is connected to:
+	(RefreshTokenEntity, weight: 0.75, type: OWNERSHIP)
+Vertex EmailVerificationTokenEntity is connected to:
+	(IdentityEmailEntity, weight: 0.75, type: OWNERSHIP)
+Vertex IdentityPropertyEntity is connected to:
+	(IdentityEntity, weight: 0.75, type: OWNERSHIP)
+Vertex ApplicationEntity is connected to:
+	(IdentityEntity, weight: 0.1, type: REFERENCE)
+	(ApplicationTypeEntity, weight: 0.1, type: REFERENCE)
+	(ClientSecretEntity, weight: 0.75, type: OWNERSHIP)
+	(ScopeEntity, weight: 0.75, type: OWNERSHIP)
+Vertex ExternalIdentityProviderTemplateEntity is connected to:
+	(ExternalIdentityProviderParameterTemplateEntity, weight: 0.75, type: OWNERSHIP)
+	(ExternalIdentityProviderEntity, weight: 0.1, type: REFERENCE)
+Vertex IdentityEmailEntity is connected to:
+	(EmailVerificationTokenEntity, weight: 0.75, type: OWNERSHIP)
+	(IdentityEntity, weight: 0.75, type: OWNERSHIP)
+Vertex AuthenticationEntity is connected to:
+	(IdentityEntity, weight: 0.1, type: REFERENCE)
+Vertex ApplicationTypeEntity is connected to:
+	(ApplicationEntity, weight: 0.1, type: REFERENCE)
+Vertex ProfileEntity is connected to:
+	(IdentityEntity, weight: 0.75, type: OWNERSHIP)
+Vertex AuthorizationCodeEntity is connected to:
+Vertex RefreshTokenEntity is connected to:
+	(AccessTokenEntity, weight: 0.75, type: OWNERSHIP)
+Vertex ExternalIdentityProviderEntity is connected to:
+	(ExternalIdentityProviderTemplateEntity, weight: 0.1, type: REFERENCE)
+	(TenantEntity, weight: 0.1, type: REFERENCE)
+	(ExternalIdentityProviderParameterEntity, weight: 0.75, type: OWNERSHIP)
+	(InProgressExternalIdentityProviderAuthorizationEntity, weight: 0.1, type: REFERENCE)
+	(IdentityEntity, weight: 0.1, type: REFERENCE)
+Vertex RoleEntity is connected to:
+	(IdentityEntity, weight: 0.4, type: CASCADE)
+Vertex ExternalIdentityProviderParameterEntity is connected to:
+	(ExternalIdentityProviderEntity, weight: 0.75, type: OWNERSHIP)
+Vertex IdentityCreateSessionDetails is connected to:
+	(IdentityEntity, weight: 0.75, type: OWNERSHIP)
+Vertex InProgressExternalIdentityProviderAuthorizationEntity is connected to:
+	(ExternalIdentityProviderEntity, weight: 0.1, type: REFERENCE)
+Vertex ExternalIdentityProviderParameterTemplateEntity is connected to:
+	(ExternalIdentityProviderTemplateEntity, weight: 0.75, type: OWNERSHIP)
+Vertex IdentityEntity is connected to:
+	(IdentityPropertyEntity, weight: 0.75, type: OWNERSHIP)
+	(ApplicationEntity, weight: 0.1, type: REFERENCE)
+	(IdentityEmailEntity, weight: 0.75, type: OWNERSHIP)
+	(AuthenticationEntity, weight: 0.1, type: REFERENCE)
+	(ProfileEntity, weight: 0.75, type: OWNERSHIP)
+	(RoleEntity, weight: 0.4, type: CASCADE)
+	(IdentityCreateSessionDetails, weight: 0.75, type: OWNERSHIP)
+	(TenantEntity, weight: 0.1, type: REFERENCE)
+	(ExternalIdentityProviderEntity, weight: 0.1, type: REFERENCE)
+	(ScopeEntity, weight: 0.75, type: OWNERSHIP)
+Vertex ScopeEntity is connected to:
+	(ApplicationEntity, weight: 0.75, type: OWNERSHIP)
+	(IdentityEntity, weight: 0.75, type: OWNERSHIP)
+Vertex ClientSecretEntity is connected to:
+	(ApplicationEntity, weight: 0.75, type: OWNERSHIP)
+Vertex LoginDescriptorEntity is connected to:
+	(TenantEntity, weight: 0.75, type: OWNERSHIP)
+Vertex TenantEntity is connected to:
+	(ExternalIdentityProviderEntity, weight: 0.1, type: REFERENCE)
+	(IdentityEntity, weight: 0.1, type: REFERENCE)
+	(LoginDescriptorEntity, weight: 0.75, type: OWNERSHIP)
+
+
+ Callgraphs:
+
+Cluster:
+	ApplicationTypeEntity
+	ApplicationEntity
+	ScopeEntity
+	ClientSecretEntity
+
+Cluster:
+	EmailVerificationTokenEntity
+	ProfileEntity
+	IdentityPropertyEntity
+	RoleEntity
+	IdentityEmailEntity
+	IdentityCreateSessionDetails
+	AuthenticationEntity
+	IdentityEntity
+
+Cluster:
+	LoginDescriptorEntity
+	TenantEntity
+
+Cluster:
+	ExternalIdentityProviderEntity
+	ExternalIdentityProviderTemplateEntity
+	ExternalIdentityProviderParameterEntity
+	InProgressExternalIdentityProviderAuthorizationEntity
+	ExternalIdentityProviderParameterTemplateEntity
+
+Cluster:
+	AccessTokenEntity
+	RefreshTokenEntity
+
+Cluster:
+	AuthorizationCodeEntity
